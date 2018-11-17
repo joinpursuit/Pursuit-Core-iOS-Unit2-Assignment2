@@ -9,12 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var oddSeason: UIImageView!
+    @IBOutlet weak var evenSeason: UIImageView!
+    
+//    private var episodes = GOTEpisode.getEps()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
   }
-
-
 }
 
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
+}
