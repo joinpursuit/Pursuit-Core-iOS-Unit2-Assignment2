@@ -14,6 +14,8 @@
 		57D0D234219F70EA00B5753A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */; };
 		57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */; };
 		A57953DE219F887F001D6FF8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57953DD219F887F001D6FF8 /* DetailViewController.swift */; };
+		A5DB223321A1DE92002AC7C4 /* OddSeasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DB223221A1DE92002AC7C4 /* OddSeasonCell.swift */; };
+		A5DB223721A1EFD4002AC7C4 /* EvenSeasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DB223621A1EFD4002AC7C4 /* EvenSeasonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		57D0D235219F70EA00B5753A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
 		A57953DD219F887F001D6FF8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A5DB223221A1DE92002AC7C4 /* OddSeasonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddSeasonCell.swift; sourceTree = "<group>"; };
+		A5DB223621A1EFD4002AC7C4 /* EvenSeasonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenSeasonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,9 @@
 			children = (
 				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
 				57D0D22B219F70EA00B5753A /* ViewController.swift */,
+				A5DB223621A1EFD4002AC7C4 /* EvenSeasonCell.swift */,
 				57D0D22D219F70EA00B5753A /* Main.storyboard */,
+				A5DB223221A1DE92002AC7C4 /* OddSeasonCell.swift */,
 				A57953DD219F887F001D6FF8 /* DetailViewController.swift */,
 				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
 				57D0D230219F70EA00B5753A /* Assets.xcassets */,
@@ -141,9 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DB223321A1DE92002AC7C4 /* OddSeasonCell.swift in Sources */,
 				57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */,
 				57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */,
 				57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */,
+				A5DB223721A1EFD4002AC7C4 /* EvenSeasonCell.swift in Sources */,
 				A57953DE219F887F001D6FF8 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

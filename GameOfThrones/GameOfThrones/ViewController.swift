@@ -12,26 +12,34 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var oddSeason: UIImageView!
-    @IBOutlet weak var evenSeason: UIImageView!
-    
-//    private var episodes = GOTEpisode.getEps()
+    private var episodes = GOTEpisode.getEps()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    tableView.dataSource = self
+    tableView.delegate = self
   }
 }
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return episodes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "OddSeasonCell", for: indexPath) as? OddSeasonCell else { fatalError("odd season cell not found") }
+        let episode = episodes[indexPath.row]
+        cell.oddEpImage.image = UIImage(named: episode.originalImageID)
+        cell.oddEpName.text = episode.name
+        cell.oddSeasonAndEp.text = episode.seasonAndEp
       return cell
     }
     
     
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 }

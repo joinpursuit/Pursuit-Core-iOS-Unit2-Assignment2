@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OddEpCell" rowHeight="100" id="aQ3-ea-7lV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OddSeasonCell" rowHeight="100" id="aQ3-ea-7lV" customClass="OddSeasonCell" customModule="GameOfThrones" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aQ3-ea-7lV" id="Shh-3V-WM6">
@@ -34,15 +34,15 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4s-Gi-hph">
                                                     <rect key="frame" x="165.5" y="0.0" width="248.5" height="99.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50I-LW-7nY">
-                                                            <rect key="frame" x="8" y="60.5" width="232.5" height="24"/>
-                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Season and Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50I-LW-7nY">
+                                                            <rect key="frame" x="8" y="65.5" width="232.5" height="19"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lns-sF-dQq">
-                                                            <rect key="frame" x="8" y="15" width="232.5" height="24"/>
-                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lns-sF-dQq">
+                                                            <rect key="frame" x="8" y="15" width="232.5" height="18.5"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -72,10 +72,12 @@
                                             <constraint firstItem="h4s-Gi-hph" firstAttribute="width" secondItem="aQ3-ea-7lV" secondAttribute="width" multiplier="0.6" id="nfW-pF-dTK"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="Pyf-M1-70b" kind="show" id="oec-Ca-Q1D"/>
+                                            <outlet property="oddEpImage" destination="R4n-Sq-zDH" id="tG5-1r-aQ7"/>
+                                            <outlet property="oddEpName" destination="Lns-sF-dQq" id="eVR-N8-OE0"/>
+                                            <outlet property="oddSeasonAndEp" destination="50I-LW-7nY" id="a60-Sb-yv8"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EvenEpCell" rowHeight="100" id="Oxt-WM-JeQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EvenSeasonCell" rowHeight="100" id="Oxt-WM-JeQ" customClass="EvenSeasonCell" customModule="GameOfThrones" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="128" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oxt-WM-JeQ" id="10N-Xm-SzH">
@@ -88,15 +90,15 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mx9-Zv-alS">
                                                     <rect key="frame" x="0.0" y="0.0" width="248.5" height="99.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfc-HF-VMZ">
-                                                            <rect key="frame" x="8" y="60.5" width="232.5" height="24"/>
-                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Season and Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfc-HF-VMZ">
+                                                            <rect key="frame" x="8" y="65.5" width="232.5" height="19"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0C-0O-0qR">
-                                                            <rect key="frame" x="8" y="15" width="232.5" height="24"/>
-                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0C-0O-0qR">
+                                                            <rect key="frame" x="8" y="15" width="232.5" height="19"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -128,6 +130,9 @@
                                             <constraint firstItem="Mx9-Zv-alS" firstAttribute="width" secondItem="Oxt-WM-JeQ" secondAttribute="width" multiplier="0.6" id="2MO-mv-wZB"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="evenEpImage" destination="qhk-yP-gtj" id="YvE-D9-vgM"/>
+                                            <outlet property="evenEpName" destination="t0C-0O-0qR" id="460-4C-UDn"/>
+                                            <outlet property="evenSeasonAndEp" destination="Qfc-HF-VMZ" id="aOw-Ey-7ZM"/>
                                             <segue destination="Pyf-M1-70b" kind="show" id="6LJ-32-XoV"/>
                                         </connections>
                                     </tableViewCell>
@@ -146,7 +151,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Game of Thrones" id="5dl-3Z-5Lf"/>
                     <connections>
-                        <outlet property="tableView" destination="kyP-hD-PcY" id="vPE-iZ-wgH"/>
+                        <outlet property="tableView" destination="kyP-hD-PcY" id="gR6-eF-kaJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -251,7 +256,4 @@
             <point key="canvasLocation" x="272" y="133"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="oec-Ca-Q1D"/>
-    </inferredMetricsTieBreakers>
 </document>
