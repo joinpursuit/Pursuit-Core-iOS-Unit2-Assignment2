@@ -30,6 +30,15 @@ class ViewController: UIViewController {
         self.gameOfThronesEpisodes = [seasonOne, seasonTwo, seasonThree, seasonFour, seasonFive, seasonSix, seasonSeven]
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = myTableView.indexPathForSelectedRow,
+            let episodeDetailViewController = segue.destination as? EpisodeDetailController else {return}
+        let episode = gameOfThronesEpisodes[indexPath.row]
+        //THIS PART NOT WORKING
+        //passing the recipe data to the recipeDetailViewController
+        episodeDetailViewController.episode = episode
+    }
+    
 }
 
 //this extendion is just for the table view delegate methods
