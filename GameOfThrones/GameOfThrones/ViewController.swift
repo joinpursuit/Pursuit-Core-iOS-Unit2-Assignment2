@@ -19,6 +19,13 @@ class ViewController: UIViewController {
     tableView.dataSource = self
     tableView.delegate = self
   }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow,
+            let DetailViewController = segue.destination as? DetailViewController else { return }
+        let episode = episodes[indexPath.row]
+        DetailViewController.episode = episode
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -27,12 +34,20 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "OddSeasonCell", for: indexPath) as? OddSeasonCell else { fatalError("odd season cell not found") }
         let episode = episodes[indexPath.row]
+        if episode.season % 2 == 1 {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "OddSeasonCell", for: indexPath) as? OddSeasonCell else { fatalError("odd season cell not found") }
         cell.oddEpImage.image = UIImage(named: episode.originalImageID)
         cell.oddEpName.text = episode.name
         cell.oddSeasonAndEp.text = episode.seasonAndEp
-      return cell
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "EvenSeasonCell", for: indexPath) as? EvenSeasonCell else { fatalError("odd season cell not found") }
+            cell.evenEpImage.image = UIImage(named: episode.originalImageID)
+            cell.evenEpName.text = episode.name
+            cell.evenSeasonAndEp.text = episode.seasonAndEp
+            return cell
+        }
     }
     
     

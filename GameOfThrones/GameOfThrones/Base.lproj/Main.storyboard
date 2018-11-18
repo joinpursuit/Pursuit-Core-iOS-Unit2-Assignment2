@@ -75,6 +75,7 @@
                                             <outlet property="oddEpImage" destination="R4n-Sq-zDH" id="tG5-1r-aQ7"/>
                                             <outlet property="oddEpName" destination="Lns-sF-dQq" id="eVR-N8-OE0"/>
                                             <outlet property="oddSeasonAndEp" destination="50I-LW-7nY" id="a60-Sb-yv8"/>
+                                            <segue destination="Pyf-M1-70b" kind="show" id="wWY-Ir-g2z"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EvenSeasonCell" rowHeight="100" id="Oxt-WM-JeQ" customClass="EvenSeasonCell" customModule="GameOfThrones" customModuleProvider="target">
@@ -133,7 +134,7 @@
                                             <outlet property="evenEpImage" destination="qhk-yP-gtj" id="YvE-D9-vgM"/>
                                             <outlet property="evenEpName" destination="t0C-0O-0qR" id="460-4C-UDn"/>
                                             <outlet property="evenSeasonAndEp" destination="Qfc-HF-VMZ" id="aOw-Ey-7ZM"/>
-                                            <segue destination="Pyf-M1-70b" kind="show" id="6LJ-32-XoV"/>
+                                            <segue destination="Pyf-M1-70b" kind="show" id="G5s-m8-n3I"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -232,6 +233,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GjG-dM-r6J"/>
                     </view>
+                    <connections>
+                        <outlet property="epAirdate" destination="6BY-PY-2zK" id="4Yw-Zx-JNt"/>
+                        <outlet property="epImage" destination="k5F-ev-Muj" id="dUx-ye-H0r"/>
+                        <outlet property="epName" destination="kwf-Fr-NRB" id="vuz-22-DKr"/>
+                        <outlet property="epNumber" destination="5wc-fF-23P" id="SQw-kf-3on"/>
+                        <outlet property="epRuntime" destination="WRK-Zm-aqF" id="LHD-mo-CVW"/>
+                        <outlet property="epSeason" destination="ZAP-ai-cE1" id="kTF-Pv-CqE"/>
+                        <outlet property="epSynopsis" destination="PtI-xf-at0" id="irO-Ak-jxG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFv-uj-5Zl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -256,4 +266,7 @@
             <point key="canvasLocation" x="272" y="133"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="G5s-m8-n3I"/>
+    </inferredMetricsTieBreakers>
 </document>
