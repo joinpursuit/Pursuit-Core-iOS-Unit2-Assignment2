@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         epImage.image = UIImage(named: (episode?.originalImageID)!)
         epName.text = episode?.name
         epSeason.text = "Season: " + String(episode!.season)
-        epNumber.text = "Number: " + String(episode!.number)
+        epNumber.text = "Episode: " + String(episode!.number)
         epRuntime.text = "Runtime: " + String(episode!.runtime)
         epAirdate.text = "Airdate: " + episode!.airdate
         epSynopsis.text = episode?.summary

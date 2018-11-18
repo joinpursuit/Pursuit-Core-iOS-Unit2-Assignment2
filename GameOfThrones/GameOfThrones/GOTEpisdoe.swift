@@ -19,7 +19,7 @@ class GOTEpisode {
     var mediumImageID: String
     var originalImageID: String
     var seasonAndEp: String {
-        return "S:\(season) E:\(number)"
+        return "S: \(season) E: \(number)"
     }
     
     init(airdate: String, id: Int, name: String, number: Int, season: Int, runtime: Int, summary: String, mediumImageID: String, originalImageID: String) {
