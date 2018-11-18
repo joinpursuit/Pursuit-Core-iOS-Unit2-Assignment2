@@ -21,6 +21,53 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T4s-mq-Btk">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeCell" rowHeight="55" id="mvw-cW-3H4" customClass="EpisodeCell" customModule="GameOfThrones" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mvw-cW-3H4" id="HmQ-4U-fxS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iWC-CF-ZJe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="54.5"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="TLc-ab-cE5">
+                                                    <rect key="frame" x="94" y="0.0" width="281" height="54.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Js-Nd-M6O">
+                                                            <rect key="frame" x="0.0" y="0.0" width="281" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRY-oj-usp">
+                                                            <rect key="frame" x="0.0" y="32.5" width="281" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iWC-CF-ZJe" firstAttribute="width" secondItem="HmQ-4U-fxS" secondAttribute="width" multiplier="0.25" id="QNx-5E-H9t"/>
+                                                <constraint firstItem="iWC-CF-ZJe" firstAttribute="top" secondItem="HmQ-4U-fxS" secondAttribute="top" id="SLb-j6-nyV"/>
+                                                <constraint firstItem="TLc-ab-cE5" firstAttribute="width" secondItem="HmQ-4U-fxS" secondAttribute="width" multiplier="0.75" id="TcV-O7-UcL"/>
+                                                <constraint firstItem="TLc-ab-cE5" firstAttribute="height" secondItem="HmQ-4U-fxS" secondAttribute="height" id="UaO-0j-8aS"/>
+                                                <constraint firstItem="iWC-CF-ZJe" firstAttribute="leading" secondItem="HmQ-4U-fxS" secondAttribute="leading" id="a2J-cm-rdp"/>
+                                                <constraint firstAttribute="trailing" secondItem="TLc-ab-cE5" secondAttribute="trailing" id="jxH-52-aaL"/>
+                                                <constraint firstAttribute="bottom" secondItem="iWC-CF-ZJe" secondAttribute="bottom" id="qHw-5P-efi"/>
+                                                <constraint firstItem="TLc-ab-cE5" firstAttribute="centerY" secondItem="HmQ-4U-fxS" secondAttribute="centerY" id="xru-vP-hf1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="episodeImage" destination="iWC-CF-ZJe" id="0J9-ht-Xlk"/>
+                                            <outlet property="episodeInfo" destination="eRY-oj-usp" id="IYo-7s-Uwe"/>
+                                            <outlet property="episodeName" destination="0Js-Nd-M6O" id="0FU-DE-pug"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

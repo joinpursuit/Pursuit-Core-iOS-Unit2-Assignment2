@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {    
+class ViewController: UIViewController {
     var gameOfThronesEpisodes = [GOTEpisode.allEpisodes]
+    
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -33,14 +34,17 @@ class ViewController: UIViewController {
 
 //this extendion is just for the table view delegate methods
 extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("section \(indexPath.section), row: \(indexPath.row)")
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
     }
+    
+    
 }
-
 extension ViewController: UITableViewDataSource{
     //this function sets up how many rose the tableview has
     //it needs to return that number!
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return gameOfThronesEpisodes[section].count
@@ -50,17 +54,30 @@ extension ViewController: UITableViewDataSource{
     //sets up the cell inside the row
     //happens as many times as there are rows
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: "dayCell")
-        //selected the appropriate string from my days of the week by using the rows indexpath.row
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath) as? EpisodeCell
+            else { fatalError("error getting episode cell") }
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath) as! EpisodeCell
         let episodeToSetUP = gameOfThronesEpisodes[indexPath.section][indexPath.row]
-        //set the cells text label to display the string chosen
-        cell.textLabel?.text = episodeToSetUP.name
-        cell.detailTextLabel?.text = "S:\(indexPath.section + 1) E: \(indexPath.row + 1)"
+        let episodeImage: UIImage = UIImage(named: episodeToSetUP.mediumImageID)!
+        
+        cell.episodeImage.image = episodeImage
+        cell.episodeName.text = episodeToSetUP.name
+        cell.episodeInfo.text = "S:\(indexPath.section + 1) E: \(indexPath.row + 1)"
+//        cell.textLabel?.text = episodeToSetUP.name
+//        cell.imageView?.image = episodeImage
+//        cell.detailTextLabel?.text = "S:\(indexPath.section + 1) E: \(indexPath.row + 1)"
+        if indexPath.section % 2 != 0 {
+            print(indexPath.section)
+//            cell.episodeImage.autoPinEdge(.top, to: .bottom, of: tableView, withOffset: 16.0)
+            cell.backgroundColor = .gray
+        }
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return gameOfThronesEpisodes.count
     }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section{
         case 0:

@@ -13,6 +13,7 @@
 		57D0D231219F70EA00B5753A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D230219F70EA00B5753A /* Assets.xcassets */; };
 		57D0D234219F70EA00B5753A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */; };
 		57D0D23C219F719C00B5753A /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D23B219F719C00B5753A /* GOTEpisode.swift */; };
+		97A821CB21A143C0008A435E /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A821CA21A143C0008A435E /* EpisodeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		57D0D233219F70EA00B5753A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57D0D235219F70EA00B5753A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D0D23B219F719C00B5753A /* GOTEpisode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
+		97A821CA21A143C0008A435E /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
 				57D0D22B219F70EA00B5753A /* ViewController.swift */,
 				57D0D22D219F70EA00B5753A /* Main.storyboard */,
+				97A821CA21A143C0008A435E /* EpisodeCell.swift */,
 				57D0D23B219F719C00B5753A /* GOTEpisode.swift */,
 				57D0D230219F70EA00B5753A /* Assets.xcassets */,
 				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D0D23C219F719C00B5753A /* GOTEpisode.swift in Sources */,
+				97A821CB21A143C0008A435E /* EpisodeCell.swift in Sources */,
 				57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */,
 				57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */,
 			);
