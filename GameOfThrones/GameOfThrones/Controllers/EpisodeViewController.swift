@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EpisodeViewController.swift
 //  GameOfThrones
 //
 //  Created by Alex Paul on 11/16/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EpisodeViewController: UIViewController {
     var gameOfThronesEpisodes = [GOTEpisode.allEpisodes]
     @IBOutlet weak var myTableView: UITableView!
     
@@ -28,13 +28,13 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension EpisodeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 55
     }
 }
 
-extension ViewController: UITableViewDataSource{
+extension EpisodeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gameOfThronesEpisodes[section].count
     }
