@@ -14,6 +14,8 @@ class DetailedGOTController: UIViewController {
     
     @IBOutlet weak var episodeTitleDetailedView: UILabel!
     
+    
+    
     @IBOutlet weak var seasonGOTDetailed: UILabel!
     
     @IBOutlet weak var runtimeDetailed: UILabel!
@@ -22,8 +24,8 @@ class DetailedGOTController: UIViewController {
     
     @IBOutlet weak var episodeDescriptionDetailed: UITextView!
     
-    
     @IBOutlet weak var episodeGOTDetailed: UILabel!
+    
     var episode: GOTEpisode?
     //outlets
     
@@ -39,6 +41,7 @@ class DetailedGOTController: UIViewController {
         imageViewGOTDetailed.image = UIImage(named:episode?.mediumImageID ?? "")
         episodeTitleDetailedView.text = episode?.name
         seasonGOTDetailed.text = ("Season: \(episode?.season ?? 0)")
+        episodeGOTDetailed.text = ("Episode: \(episode?.number ?? 0)")
         runtimeDetailed.text = ("Airtime: \(episode?.runtime ?? 0)")
         airdateDetailed.text = ("Airdate: \(episode?.airdate ?? " ")")
         episodeDescriptionDetailed.text = episode?.summary

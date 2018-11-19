@@ -68,7 +68,7 @@
                                             <segue destination="STc-35-hDk" kind="show" id="xQI-Zb-3Xm"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="yfW-NH-4yi" customClass="CustomDisplayCell" customModule="GameOfThrones" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GOTCellTwo" rowHeight="100" id="yfW-NH-4yi" customClass="CustomDisplayCell" customModule="GameOfThrones" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="128" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yfW-NH-4yi" id="n1J-wf-mt1">
@@ -108,6 +108,12 @@
                                                 <constraint firstItem="snE-P6-MmP" firstAttribute="leading" secondItem="DGF-CX-VhT" secondAttribute="trailing" constant="20" id="nDa-ld-pPE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="episodeName" destination="Rw7-VV-y14" id="6M8-Ck-isn"/>
+                                            <outlet property="gOTImage" destination="snE-P6-MmP" id="2Kj-jP-xvf"/>
+                                            <outlet property="seasonEpisode" destination="DGF-CX-VhT" id="pb8-vn-SaV"/>
+                                            <segue destination="STc-35-hDk" kind="show" id="q28-nk-UoV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -206,7 +212,7 @@
                     <connections>
                         <outlet property="airdateDetailed" destination="Bke-3E-sJy" id="qI2-dF-E7r"/>
                         <outlet property="episodeDescriptionDetailed" destination="wmf-Kx-jje" id="unY-rs-60w"/>
-                        <outlet property="episodeGOTDetailed" destination="60I-71-Lt1" id="MhP-n0-Jza"/>
+                        <outlet property="episodeGOTDetailed" destination="60I-71-Lt1" id="Twf-ko-Qvn"/>
                         <outlet property="episodeTitleDetailedView" destination="kGN-60-CUz" id="ADd-P8-5Dr"/>
                         <outlet property="imageViewGOTDetailed" destination="r5S-ht-JUV" id="Pjc-SX-3M7"/>
                         <outlet property="runtimeDetailed" destination="7u8-WO-IPa" id="mB1-Fz-foH"/>
@@ -236,4 +242,7 @@
             <point key="canvasLocation" x="140" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="q28-nk-UoV"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -14,8 +14,5 @@ class CustomDisplayCell: UITableViewCell {
     @IBOutlet weak var episodeName: UILabel!
     @IBOutlet weak var seasonEpisode: UILabel!
     
-    
-    
-    
 
 }
