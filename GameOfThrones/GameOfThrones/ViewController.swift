@@ -40,7 +40,7 @@ extension ViewController: UITableViewDataSource{
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if indexPath.section % 2 == 0 {
+        if indexPath.section % 2 == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath) as? EpisodeCell
                 else { fatalError("error getting episode cell") }
             let episodeToSetUP = gameOfThronesEpisodes[indexPath.section][indexPath.row]
@@ -51,17 +51,17 @@ extension ViewController: UITableViewDataSource{
             cell.episodeInfo.text = "S:\(indexPath.section + 1) E: \(indexPath.row + 1)"
             return cell
             
-//        } else {
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCellTwo", for: indexPath) as? EpisodeCellTwo
-//                else { fatalError("error getting episode cell") }
-//            let episodeToSetUP = gameOfThronesEpisodes[indexPath.section][indexPath.row]
-//            let episodeImage: UIImage = UIImage(named: episodeToSetUP.mediumImageID)!
-//            
-//            cell.episodeImage.image = episodeImage
-//            cell.episodeName.text = episodeToSetUP.name
-//            cell.episodeInfo.text = "S:\(indexPath.section + 1) E: \(indexPath.row + 1)"
-//            return cell
-//        }
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCellTwo", for: indexPath) as? EpisodeCellTwo
+                else { fatalError("error getting episode cell") }
+            let episodeToSetUP = gameOfThronesEpisodes[indexPath.section][indexPath.row]
+            let episodeImage: UIImage = UIImage(named: episodeToSetUP.mediumImageID)!
+        
+            cell.episodeImage.image = episodeImage
+            cell.episodeName.text = episodeToSetUP.name
+            cell.episodeInfo.text = "S:\(indexPath.section + 1) E: \(indexPath.row + 1)"
+            return cell
+        }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return gameOfThronesEpisodes.count

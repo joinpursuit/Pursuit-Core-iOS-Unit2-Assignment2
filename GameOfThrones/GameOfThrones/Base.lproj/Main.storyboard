@@ -68,7 +68,7 @@
                                             <segue destination="52s-0x-zS8" kind="show" id="vZO-Dx-y0L"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="kMA-wJ-fnq" customClass="EpisodeCellTwo" customModule="GameOfThrones" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeCellTwo" rowHeight="55" id="kMA-wJ-fnq" customClass="EpisodeCellTwo" customModule="GameOfThrones" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="83" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kMA-wJ-fnq" id="jEA-jL-6KQ">
@@ -108,9 +108,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="episodeImageTwo" destination="4fw-df-r3p" id="REu-Re-jGQ"/>
-                                            <outlet property="episodeInfoTwo" destination="h35-5z-hXM" id="O5R-bc-Gjs"/>
-                                            <outlet property="episodeNameTwo" destination="cpl-jq-xAw" id="A55-Z9-1rQ"/>
+                                            <outlet property="episodeImage" destination="4fw-df-r3p" id="Ije-Mw-iyF"/>
+                                            <outlet property="episodeInfo" destination="h35-5z-hXM" id="hc1-0B-afR"/>
+                                            <outlet property="episodeName" destination="cpl-jq-xAw" id="sgs-Gd-rcl"/>
                                             <segue destination="52s-0x-zS8" kind="show" id="lOJ-BC-PLo"/>
                                         </connections>
                                     </tableViewCell>
