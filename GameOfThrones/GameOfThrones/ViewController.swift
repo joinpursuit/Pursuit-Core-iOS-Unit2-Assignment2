@@ -8,12 +8,15 @@
 
 import UIKit
 
+var x:[[GOTEpisode]] = [[]]
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     private var allEpisodes = GOTEpisode.allEpisodes
     
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -24,11 +27,15 @@ class ViewController: UIViewController {
         
     }
     
+    var filteredBySeason = [[GOTEpisode.allEpisodes.filter{$0.season == 1}],[GOTEpisode.allEpisodes.filter{$0.season == 2}],[GOTEpisode.allEpisodes.filter{$0.season == 3}], [GOTEpisode.allEpisodes.filter{$0.season == 4}], [GOTEpisode.allEpisodes.filter{$0.season == 5}], [GOTEpisode.allEpisodes.filter{$0.season == 6}]]
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow,
             let detailedGOTController = segue.destination as? DetailedGOTController else {return}
         
         let currentEpisode = allEpisodes[indexPath.row]
+        
+        
         detailedGOTController.episode = currentEpisode
     }
     
@@ -67,25 +74,22 @@ extension ViewController: UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var allTitles: [String] = ["Season One", "Season Two", "Season Three", "Season Four", "Season Five", "Season Six"]
-        return allTitles[section]
-        
-//        switch allEpisodes[section].season {
-//        case 1:
-//            return "Season One"
-//        case 2:
-//            return "Season Two"
-//        case 3:
-//            return "Season Three"
-//        case 4:
-//            return "Season Four"
-//        case 5:
-//            return "Season Five"
-//        case 6:
-//            return "Season Six"
-//        default:
-//            return "invalid"
-//        }
+        switch section{
+        case 1:
+            return "Season One"
+        case 2:
+            return "Season Two"
+        case 3:
+            return "Season Three"
+        case 4:
+            return "Season Four"
+        case 5:
+            return "Season Five"
+        case 6:
+            return "Season Six"
+        default:
+            return "invalid"
+        }
     }
 }
 
