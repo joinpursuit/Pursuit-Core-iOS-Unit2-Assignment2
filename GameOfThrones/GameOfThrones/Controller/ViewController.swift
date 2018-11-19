@@ -18,6 +18,7 @@ class ViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
     @objc private func fetchEpisodes() {
         refreshControl.endRefreshing()
         episodes = GOTEpisode.getEps()
@@ -67,6 +68,27 @@ extension ViewController: UITableViewDataSource {
             cell.evenEpName.text = episode.name
             cell.evenSeasonAndEp.text = episode.seasonAndEp
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Season 1"
+        case 1:
+            return "Season 2"
+        case 2:
+            return "Season 3"
+        case 3:
+            return "Season 4"
+        case 4:
+            return "Season 5"
+        case 5:
+            return "Season 6"
+        case 6:
+            return "Season 7"
+        default:
+            return nil
         }
     }
 }

@@ -108,4 +108,8 @@ class GOTEpisode {
     static func getEps() -> [GOTEpisode] {
         return GOTEpisode.allEpisodes
     }
+    
+    static func getEpsBySeason() -> [[GOTEpisode]] {
+        return [allEpisodes.filter{ $0.season == 1 }, allEpisodes.filter{ $0.season == 2 }, allEpisodes.filter{ $0.season == 3 }, allEpisodes.filter{ $0.season == 4 }, allEpisodes.filter{ $0.season == 5 }, allEpisodes.filter{ $0.season == 6 }, allEpisodes.filter{ $0.season == 7 }]
+    }
 }
