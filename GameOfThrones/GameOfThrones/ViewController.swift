@@ -33,10 +33,9 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = myTableView.indexPathForSelectedRow,
             let episodeDetailViewController = segue.destination as? EpisodeDetailController else {return}
-        let episode = gameOfThronesEpisodes[indexPath.row]
-        //THIS PART NOT WORKING
-        //passing the recipe data to the recipeDetailViewController
+        let episode = gameOfThronesEpisodes[indexPath.section][indexPath.row]
         episodeDetailViewController.episode = episode
+        
     }
     
 }
