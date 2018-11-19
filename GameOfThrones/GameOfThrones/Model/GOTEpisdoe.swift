@@ -110,6 +110,10 @@ class GOTEpisode {
     }
     
     static func getEpsBySeason() -> [[GOTEpisode]] {
-        return [allEpisodes.filter{ $0.season == 1 }, allEpisodes.filter{ $0.season == 2 }, allEpisodes.filter{ $0.season == 3 }, allEpisodes.filter{ $0.season == 4 }, allEpisodes.filter{ $0.season == 5 }, allEpisodes.filter{ $0.season == 6 }, allEpisodes.filter{ $0.season == 7 }]
+        var returnMatrix: [[GOTEpisode]] = []
+        for num in 1...7 {
+            returnMatrix.append(allEpisodes.filter{ $0.season == num })
+        }
+        return returnMatrix
     }
 }

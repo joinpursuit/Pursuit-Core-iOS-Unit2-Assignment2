@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     private var refreshControl: UIRefreshControl!
-    private var episodes: [GOTEpisode] = [] {
+    private var episodes: [[GOTEpisode]] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     @objc private func fetchEpisodes() {
         refreshControl.endRefreshing()
-        episodes = GOTEpisode.getEps()
+        episodes = GOTEpisode.getEpsBySeason()
     }
     private func setupRefreshControl() {
         refreshControl = UIRefreshControl()
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
     super.viewDidLoad()
-    episodes = GOTEpisode.getEps()
+    episodes = GOTEpisode.getEpsBySeason()
     setUpProtocol()
     setupRefreshControl()
   }
@@ -44,19 +44,23 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow,
             let DetailViewController = segue.destination as? DetailViewController else { return }
-        let episode = episodes[indexPath.row]
+        let episode = episodes[indexPath.section][indexPath.row]
         DetailViewController.episode = episode
     }
 }
 
 extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return episodes.count
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return episodes[section].count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let episode = episodes[indexPath.row]
-        if episode.season % 2 == 1 {
+        let episode = episodes[indexPath.section][indexPath.row]
+        if indexPath.section % 2 == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "OddSeasonCell", for: indexPath) as? OddSeasonCell else { fatalError("oddSeasonCell not found") }
             cell.oddEpImage.image = UIImage(named: episode.originalImageID)
             cell.oddEpName.text = episode.name
@@ -103,6 +107,6 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let searchText = searchBar.text else { return }
-        episodes = GOTEpisode.getEps().filter{ $0.name.lowercased().contains(searchText.lowercased()) } // $0.summary.lowercased().contains(searchText.lowercased())
+        episodes = [GOTEpisode.getEps().filter{ $0.name.lowercased().contains(searchText.lowercased()) }]
     }
 }
