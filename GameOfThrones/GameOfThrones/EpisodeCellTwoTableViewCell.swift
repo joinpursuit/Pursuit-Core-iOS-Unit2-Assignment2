@@ -10,8 +10,8 @@ import UIKit
 
 class EpisodeCellTwo: UITableViewCell {
 
-    @IBOutlet weak var episodeImageTwo: UIImageView!
-    @IBOutlet weak var episodeNameTwo: UILabel!
-    @IBOutlet weak var episodeInfoTwo: UILabel!
+    @IBOutlet weak var episodeImage: UIImageView!
+    @IBOutlet weak var episodeName: UILabel!
+    @IBOutlet weak var episodeInfo: UILabel!
     
 }

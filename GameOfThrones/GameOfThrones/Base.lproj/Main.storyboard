@@ -111,6 +111,7 @@
                                             <outlet property="episodeImageTwo" destination="4fw-df-r3p" id="REu-Re-jGQ"/>
                                             <outlet property="episodeInfoTwo" destination="h35-5z-hXM" id="O5R-bc-Gjs"/>
                                             <outlet property="episodeNameTwo" destination="cpl-jq-xAw" id="A55-Z9-1rQ"/>
+                                            <segue destination="52s-0x-zS8" kind="show" id="lOJ-BC-PLo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -250,4 +251,7 @@
             <point key="canvasLocation" x="202" y="27"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="lOJ-BC-PLo"/>
+    </inferredMetricsTieBreakers>
 </document>
