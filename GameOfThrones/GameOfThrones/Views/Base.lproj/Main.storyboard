@@ -21,9 +21,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jaJ-Tc-Be1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="search episode" id="Gev-KK-Yeg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameOfThronesCell" rowHeight="100" id="ZQG-6g-o9o" customClass="GotCellTableViewCell" customModule="GameOfThrones" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZQG-6g-o9o" id="kGg-1d-uRR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -77,8 +82,8 @@
                                             <segue destination="tuo-x3-vXj" kind="show" id="ZZo-kr-5u4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="ICc-gP-MdJ">
-                                        <rect key="frame" x="0.0" y="128" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameOfThronesCell2" rowHeight="100" id="ICc-gP-MdJ" customClass="GotCellTableViewCell" customModule="GameOfThrones" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="172" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ICc-gP-MdJ" id="CZx-Ax-be6">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -117,6 +122,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="c0i-jC-1Xo" secondAttribute="trailing" id="xSX-DT-1B9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="gotEpisodeName" destination="tmM-kq-ehi" id="YU0-bY-AnS"/>
+                                            <outlet property="gotImage" destination="c0i-jC-1Xo" id="VwT-M4-koF"/>
+                                            <outlet property="gotSeasonEpisode" destination="B1d-9e-BMz" id="uWH-Tn-Xqb"/>
+                                            <segue destination="tuo-x3-vXj" kind="show" id="Lb1-Xu-Eu4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -132,10 +143,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="lar-II-RMY"/>
                     <connections>
+                        <outlet property="searchBar" destination="Gev-KK-Yeg" id="qKT-Wg-QhQ"/>
+                        <outlet property="searchDisplayController" destination="RKV-da-vzn" id="hUS-B0-Rr9"/>
                         <outlet property="tableView" destination="jaJ-Tc-Be1" id="bcS-Ov-XIP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="RKV-da-vzn">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="feS-fs-eub"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="ZSV-be-jpy"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="7xR-G1-2lg"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="7VX-uY-jBz"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1076" y="132.68365817091455"/>
         </scene>
@@ -253,4 +274,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZZo-kr-5u4"/>
+    </inferredMetricsTieBreakers>
 </document>

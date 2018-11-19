@@ -20,20 +20,20 @@ class GotDetailViewController: UIViewController {
     @IBOutlet weak var episodeDescription: UITextView!
     
     
-    var episode: GOTEpisode?
+    var episode: GOTEpisode!
     override func viewDidLoad() {
         super.viewDidLoad()
         updateEpisodeUI()
 
     }
     private func updateEpisodeUI() {
-        episodeImage.image = UIImage(named: episode?.mediumImageID ?? "")
-        episodeTitle.text = episode?.name
-        episodeSeason.text = "Season: \(episode?.season ?? 0)"
-        episodeNumber.text = "Episode: \(episode?.number ?? 0)"
-        episodeRuntime.text = "Runtime: \(episode?.runtime ?? 0)"
-        episodeAirDate.text = "Airdate: \(episode?.airdate ?? "")"
-        episodeDescription.text = episode?.summary
+        episodeImage.image = UIImage(named: episode.mediumImageID)
+        episodeTitle.text = episode.name
+        episodeSeason.text = "Season: \(episode.season)"
+        episodeNumber.text = "Episode: \(episode.number)"
+        episodeRuntime.text = "Runtime: \(episode.runtime)"
+        episodeAirDate.text = "Airdate: \(episode.airdate)"
+        episodeDescription.text = episode.summary
     }
 
 }

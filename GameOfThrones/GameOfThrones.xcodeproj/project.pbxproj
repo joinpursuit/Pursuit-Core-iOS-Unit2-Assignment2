@@ -61,16 +61,40 @@
 			isa = PBXGroup;
 			children = (
 				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
-				57D0D22B219F70EA00B5753A /* ViewController.swift */,
-				D5B1772221A0C95400DE28E7 /* GotDetailViewController.swift */,
-				57D0D22D219F70EA00B5753A /* Main.storyboard */,
-				D5B1771E21A0C4D200DE28E7 /* GotCellTableViewCell.swift */,
-				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
+				D549053F21A2750900972B20 /* Controls */,
+				D549054021A2752600972B20 /* Views */,
+				D549054121A2752F00972B20 /* Model */,
 				57D0D230219F70EA00B5753A /* Assets.xcassets */,
 				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
 				57D0D235219F70EA00B5753A /* Info.plist */,
 			);
 			path = GameOfThrones;
+			sourceTree = "<group>";
+		};
+		D549053F21A2750900972B20 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D22B219F70EA00B5753A /* ViewController.swift */,
+				D5B1772221A0C95400DE28E7 /* GotDetailViewController.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		D549054021A2752600972B20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D22D219F70EA00B5753A /* Main.storyboard */,
+				D5B1771E21A0C4D200DE28E7 /* GotCellTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D549054121A2752F00972B20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
