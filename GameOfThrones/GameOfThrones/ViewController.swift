@@ -18,16 +18,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         myTableView.delegate = self
         myTableView.dataSource = self
-        let seasonOne = GOTEpisode.allEpisodes.filter {$0.season == 1}
-        let seasonTwo = GOTEpisode.allEpisodes.filter {$0.season == 2}
-        let seasonThree = GOTEpisode.allEpisodes.filter {$0.season == 3}
-        let seasonFour = GOTEpisode.allEpisodes.filter {$0.season == 4}
-        let seasonFive = GOTEpisode.allEpisodes.filter {$0.season == 5}
-        let seasonSix = GOTEpisode.allEpisodes.filter {$0.season == 6}
-        let seasonSeven = GOTEpisode.allEpisodes.filter {$0.season == 7}
-
-
-        self.gameOfThronesEpisodes = [seasonOne, seasonTwo, seasonThree, seasonFour, seasonFive, seasonSix, seasonSeven]
+        
+        gameOfThronesEpisodes = Array(repeating: [GOTEpisode](), count: GOTEpisode.allEpisodes.last!.season)
+        GOTEpisode.allEpisodes.forEach { gameOfThronesEpisodes[$0.season - 1].append($0) }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,15 +39,9 @@ extension ViewController: UITableViewDelegate {
         return 55
     }
     
-    
 }
 extension ViewController: UITableViewDataSource{
-    //this function sets up how many rose the tableview has
-    //it needs to return that number!
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return gameOfThronesEpisodes[section].count
     }
     
@@ -62,26 +49,52 @@ extension ViewController: UITableViewDataSource{
     //sets up the cell inside the row
     //happens as many times as there are rows
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        if indexPath.section % 2 == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath) as? EpisodeCell
+                else { fatalError("error getting episode cell") }
+            let episodeToSetUP = gameOfThronesEpisodes[indexPath.section][indexPath.row]
+            let episodeImage: UIImage = UIImage(named: episodeToSetUP.mediumImageID)!
+            
+            cell.episodeImage.image = episodeImage
+            cell.episodeName.text = episodeToSetUP.name
+            cell.episodeInfo.text = "S:\(indexPath.section + 1) E: \(indexPath.row + 1)"
+            //        cell.textLabel?.text = episodeToSetUP.name
+            //        cell.imageView?.image = episodeImage
+            //        cell.detailTextLabel?.text = "S:\(indexPath.section + 1) E: \(indexPath.row + 1)"
+//            if indexPath.section % 2 != 0 {
+//                print(indexPath.section)
+//                //            cell.episodeImage.autoPinEdge(.top, to: .bottom, of: tableView, withOffset: 16.0)
+//                cell.backgroundColor = .gray
+//            }
+            return cell
+            
+//        } else {
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCellTwo", for: indexPath) as? EpisodeCellTwo
+//                else { fatalError("error getting episode cell") }
+//            let episodeToSetUP = gameOfThronesEpisodes[indexPath.section][indexPath.row]
+//            let episodeImage: UIImage = UIImage(named: episodeToSetUP.mediumImageID)!
+//
+//            cell.episodeImageTwo.image = episodeImage
+//            cell.episodeNameTwo.text = episodeToSetUP.name
+//            cell.episodeInfoTwo.text = "S:\(indexPath.section + 1) E: \(indexPath.row + 1)"
+//            //        cell.textLabel?.text = episodeToSetUP.name
+//            //        cell.imageView?.image = episodeImage
+//            //        cell.detailTextLabel?.text = "S:\(indexPath.section + 1) E: \(indexPath.row + 1)"
+////            if indexPath.section % 2 != 0 {
+////                print(indexPath.section)
+////                //            cell.episodeImage.autoPinEdge(.top, to: .bottom, of: tableView, withOffset: 16.0)
+////                cell.backgroundColor = .gray
+////            }
+//            return cell
+//        }
+
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath) as? EpisodeCell
-            else { fatalError("error getting episode cell") }
+        //add code for EpisodeCell2
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath) as! EpisodeCell
-        let episodeToSetUP = gameOfThronesEpisodes[indexPath.section][indexPath.row]
-        let episodeImage: UIImage = UIImage(named: episodeToSetUP.mediumImageID)!
-        
-        cell.episodeImage.image = episodeImage
-        cell.episodeName.text = episodeToSetUP.name
-        cell.episodeInfo.text = "S:\(indexPath.section + 1) E: \(indexPath.row + 1)"
-//        cell.textLabel?.text = episodeToSetUP.name
-//        cell.imageView?.image = episodeImage
-//        cell.detailTextLabel?.text = "S:\(indexPath.section + 1) E: \(indexPath.row + 1)"
-        if indexPath.section % 2 != 0 {
-            print(indexPath.section)
-//            cell.episodeImage.autoPinEdge(.top, to: .bottom, of: tableView, withOffset: 16.0)
-            cell.backgroundColor = .gray
-        }
-        return cell
+
     }
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return gameOfThronesEpisodes.count
     }

@@ -68,6 +68,51 @@
                                             <segue destination="52s-0x-zS8" kind="show" id="vZO-Dx-y0L"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="kMA-wJ-fnq" customClass="EpisodeCellTwo" customModule="GameOfThrones" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="83" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kMA-wJ-fnq" id="jEA-jL-6KQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4fw-df-r3p">
+                                                    <rect key="frame" x="281.5" y="0.0" width="93.5" height="54.5"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="DQn-dW-fh0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="281.5" height="54.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpl-jq-xAw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="281.5" height="28"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h35-5z-hXM">
+                                                            <rect key="frame" x="0.0" y="34" width="281.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DQn-dW-fh0" firstAttribute="leading" secondItem="jEA-jL-6KQ" secondAttribute="leading" id="7iw-nL-JiW"/>
+                                                <constraint firstItem="4fw-df-r3p" firstAttribute="height" secondItem="jEA-jL-6KQ" secondAttribute="height" id="9l9-rP-Emj"/>
+                                                <constraint firstAttribute="trailing" secondItem="4fw-df-r3p" secondAttribute="trailing" id="B3Z-Mh-6vM"/>
+                                                <constraint firstItem="DQn-dW-fh0" firstAttribute="height" secondItem="jEA-jL-6KQ" secondAttribute="height" id="WZc-V5-uu8"/>
+                                                <constraint firstItem="DQn-dW-fh0" firstAttribute="width" secondItem="jEA-jL-6KQ" secondAttribute="width" multiplier="0.75" id="Wrq-JN-WCK"/>
+                                                <constraint firstItem="4fw-df-r3p" firstAttribute="width" secondItem="jEA-jL-6KQ" secondAttribute="width" multiplier="0.25" id="eNk-9K-bg5"/>
+                                                <constraint firstItem="DQn-dW-fh0" firstAttribute="top" secondItem="4fw-df-r3p" secondAttribute="top" id="mgu-03-MeD"/>
+                                                <constraint firstItem="4fw-df-r3p" firstAttribute="centerY" secondItem="jEA-jL-6KQ" secondAttribute="centerY" id="pdT-fn-WIL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="episodeImageTwo" destination="4fw-df-r3p" id="REu-Re-jGQ"/>
+                                            <outlet property="episodeInfoTwo" destination="h35-5z-hXM" id="O5R-bc-Gjs"/>
+                                            <outlet property="episodeNameTwo" destination="cpl-jq-xAw" id="A55-Z9-1rQ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -87,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="27"/>
+            <point key="canvasLocation" x="976.79999999999995" y="26.53673163418291"/>
         </scene>
         <!--Episode Detail Controller-->
         <scene sceneID="E2b-Ep-7uq">

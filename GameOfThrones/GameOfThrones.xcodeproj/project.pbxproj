@@ -15,6 +15,7 @@
 		57D0D23C219F719C00B5753A /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D23B219F719C00B5753A /* GOTEpisode.swift */; };
 		97A821CB21A143C0008A435E /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A821CA21A143C0008A435E /* EpisodeCell.swift */; };
 		97A821CD21A15787008A435E /* EpisodeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A821CC21A15787008A435E /* EpisodeDetailController.swift */; };
+		97A821CF21A25993008A435E /* EpisodeCellTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A821CE21A25993008A435E /* EpisodeCellTwoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		57D0D23B219F719C00B5753A /* GOTEpisode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
 		97A821CA21A143C0008A435E /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		97A821CC21A15787008A435E /* EpisodeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailController.swift; sourceTree = "<group>"; };
+		97A821CE21A25993008A435E /* EpisodeCellTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellTwoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				57D0D22D219F70EA00B5753A /* Main.storyboard */,
 				97A821CC21A15787008A435E /* EpisodeDetailController.swift */,
 				97A821CA21A143C0008A435E /* EpisodeCell.swift */,
+				97A821CE21A25993008A435E /* EpisodeCellTwoTableViewCell.swift */,
 				57D0D23B219F719C00B5753A /* GOTEpisode.swift */,
 				57D0D230219F70EA00B5753A /* Assets.xcassets */,
 				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 				97A821CD21A15787008A435E /* EpisodeDetailController.swift in Sources */,
 				97A821CB21A143C0008A435E /* EpisodeCell.swift in Sources */,
 				57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */,
+				97A821CF21A25993008A435E /* EpisodeCellTwoTableViewCell.swift in Sources */,
 				57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
