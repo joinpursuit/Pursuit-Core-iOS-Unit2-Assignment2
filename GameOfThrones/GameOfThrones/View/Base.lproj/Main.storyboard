@@ -17,8 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yar-4q-VDk">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kyP-hD-PcY">
-                                <rect key="frame" x="0.0" y="88" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OddSeasonCell" rowHeight="100" id="aQ3-ea-7lV" customClass="OddSeasonCell" customModule="GameOfThrones" customModuleProvider="target">
@@ -40,8 +44,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Episode Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lns-sF-dQq">
-                                                            <rect key="frame" x="8" y="15" width="233" height="43"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lns-sF-dQq">
+                                                            <rect key="frame" x="8" y="15" width="232.5" height="21"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -97,8 +101,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Episode Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0C-0O-0qR">
-                                                            <rect key="frame" x="8" y="15" width="233" height="43"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0C-0O-0qR">
+                                                            <rect key="frame" x="8" y="15" width="232.5" height="21"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -142,16 +146,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="yar-4q-VDk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Wd-rs-idP"/>
                             <constraint firstItem="kyP-hD-PcY" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="FtP-6c-BWm"/>
-                            <constraint firstItem="kyP-hD-PcY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="H6O-gK-eVU"/>
+                            <constraint firstItem="yar-4q-VDk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HeT-iY-wqC"/>
+                            <constraint firstItem="kyP-hD-PcY" firstAttribute="top" secondItem="yar-4q-VDk" secondAttribute="bottom" id="KMX-Zs-Tiz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kyP-hD-PcY" secondAttribute="trailing" id="fPz-Fp-WfO"/>
                             <constraint firstItem="kyP-hD-PcY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fvV-Iv-IHA"/>
                             <constraint firstItem="kyP-hD-PcY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="m7v-yd-Q1P"/>
+                            <constraint firstItem="yar-4q-VDk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pix-LM-768"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Game of Thrones" id="5dl-3Z-5Lf"/>
                     <connections>
+                        <outlet property="searchBar" destination="yar-4q-VDk" id="Dg8-v5-1ax"/>
                         <outlet property="tableView" destination="kyP-hD-PcY" id="gR6-eF-kaJ"/>
                     </connections>
                 </viewController>
