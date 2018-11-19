@@ -107,6 +107,6 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let searchText = searchBar.text else { return }
-        GOTData = [GOTEpisode.getEps().filter{ $0.name.lowercased().contains(searchText.lowercased()) }]
+        GOTData = [GOTEpisode.allEpisodes.filter{ $0.name.lowercased().contains(searchText.lowercased()) }]
     }
 }
