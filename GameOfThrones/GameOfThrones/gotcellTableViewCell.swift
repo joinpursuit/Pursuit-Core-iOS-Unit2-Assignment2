@@ -9,6 +9,7 @@
 import UIKit
 
 class gotcellTableViewCell: UITableViewCell {
+
     @IBOutlet weak  var gotImage: UIImageView!
     @IBOutlet weak var gotName: UILabel!
     @IBOutlet weak var Season: UILabel!
