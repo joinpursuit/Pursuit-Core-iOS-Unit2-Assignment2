@@ -35,13 +35,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blx-BA-79g">
-                                                    <rect key="frame" x="131" y="31" width="252" height="18"/>
+                                                    <rect key="frame" x="131" y="31" width="646" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sID-cY-tg7">
-                                                    <rect key="frame" x="131" y="59" width="252" height="18"/>
+                                                    <rect key="frame" x="131" y="59" width="646" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -74,7 +74,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3fo-cw-Yib">
-                                                    <rect key="frame" x="290" y="11" width="104" height="136"/>
+                                                    <rect key="frame" x="290" y="11" width="498" height="136"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Td8-cN-Zo3">
                                                     <rect key="frame" x="31" y="31" width="248" height="18"/>
@@ -106,12 +106,13 @@
                                             <outlet property="episodeImage" destination="3fo-cw-Yib" id="0e1-UO-O0u"/>
                                             <outlet property="episodeName" destination="Td8-cN-Zo3" id="CXF-W4-SQC"/>
                                             <outlet property="seasonAndEpisodeLabel" destination="sSv-BJ-C0c" id="Xts-9j-KvT"/>
+                                            <segue destination="bsp-cQ-X4G" kind="show" id="EJL-fF-LxM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="oTa-Ti-XOG">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="88" width="0.0" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -247,4 +248,7 @@
             <point key="canvasLocation" x="496.80000000000001" y="-545.32019704433503"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pEX-Cn-2yY"/>
+    </inferredMetricsTieBreakers>
 </document>
