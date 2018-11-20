@@ -25,7 +25,7 @@ class DisplayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         singleEpisodeSeason.text = ("Season: \(episode.season)")
-        singleEpisodeRunTime.text = ("RunTime: \(episode.runtime)")
+        singleEpisodeRunTime.text = ("RunTime: \(episode.runtime) minutes")
         singleEpisodeImage.image = UIImage(named: episode.originalImageID)
         singleEpisodeName.text = episode.name
         singleEpisodeEpisode.text = ("Episode: \(episode.number)")
