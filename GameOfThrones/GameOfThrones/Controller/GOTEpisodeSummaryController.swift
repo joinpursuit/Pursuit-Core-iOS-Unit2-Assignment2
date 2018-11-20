@@ -29,6 +29,10 @@ class GOTEpisodeSummaryController: UIViewController {
     private func updateEpisodeSummaryUI() {
         episodeImg.image = UIImage.init(named: episode!.originalImageID)!
         episodeTitle.text = episode?.name
-        seasonNum.text = "Season: \(String(describing: episode?.season))"
+        seasonNum.text = "Season: \(episode!.season)"
+        episodeNum.text = "Episode: \(episode!.number))"
+        episodeRuntime.text = "Runtime: \(episode!.runtime)"
+        episodeAirdate.text = "Airdate: \(episode!.airdate)"
+        episodeSummary.text = episode?.summary
     }
 }

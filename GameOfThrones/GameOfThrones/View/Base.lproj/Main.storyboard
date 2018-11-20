@@ -22,15 +22,15 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="leftSideImgCell" rowHeight="115" id="KgI-Xg-w2H" customClass="leftSideImgCell" customModule="GameOfThrones" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="115"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="leftSideImgCell" id="KgI-Xg-w2H" customClass="leftSideImgCell" customModule="GameOfThrones" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KgI-Xg-w2H" id="INS-yw-fi8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="114.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1d4-fI-dl5">
-                                                    <rect key="frame" x="15" y="12.5" width="160" height="90"/>
+                                                    <rect key="frame" x="15" y="5" width="160" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="160" id="AEi-4R-VUX"/>
                                                         <constraint firstAttribute="width" secondItem="1d4-fI-dl5" secondAttribute="height" multiplier="16:9" id="Avo-lt-kNO"/>
@@ -43,7 +43,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2Q-On-rjh">
-                                                    <rect key="frame" x="187" y="73.5" width="176" height="21"/>
+                                                    <rect key="frame" x="187" y="58.5" width="176" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -67,22 +67,22 @@
                                             <segue destination="1iN-zk-Bu5" kind="show" id="Mp7-zx-yMd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rightSideImgCell" rowHeight="115" id="j1U-R0-gYV" customClass="rightSideImgCell" customModule="GameOfThrones" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="143" width="375" height="115"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rightSideImgCell" id="j1U-R0-gYV" customClass="rightSideImgCell" customModule="GameOfThrones" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j1U-R0-gYV" id="I8A-xk-c5O">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="114.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ORP-Ik-yRE">
-                                                    <rect key="frame" x="199" y="12" width="161" height="90.5"/>
+                                                    <rect key="frame" x="199" y="4.5" width="161" height="90.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ORP-Ik-yRE" secondAttribute="height" multiplier="16:9" id="7wD-jr-bib"/>
                                                         <constraint firstAttribute="width" constant="161" id="z2i-Px-U3F"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j82-f8-dSV">
-                                                    <rect key="frame" x="27" y="73" width="160" height="21"/>
+                                                    <rect key="frame" x="27" y="58" width="160" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -109,6 +109,7 @@
                                             <outlet property="episodeImg" destination="ORP-Ik-yRE" id="5ve-dV-rds"/>
                                             <outlet property="episodeTitle" destination="KnD-FS-FMb" id="yod-iu-xSC"/>
                                             <outlet property="seasonAndEpisodeNum" destination="j82-f8-dSV" id="piL-m4-fQ8"/>
+                                            <segue destination="1iN-zk-Bu5" kind="show" id="6C5-sJ-ijR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -125,7 +126,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hKX-1f-iW1"/>
                     <connections>
-                        <outlet property="tabelView" destination="vxC-ew-uwY" id="8Wr-5J-dx4"/>
+                        <outlet property="tableView" destination="vxC-ew-uwY" id="Hh3-TG-BzH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -246,4 +247,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="128.80434782608697"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Mp7-zx-yMd"/>
+    </inferredMetricsTieBreakers>
 </document>
