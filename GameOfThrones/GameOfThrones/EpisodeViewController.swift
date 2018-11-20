@@ -11,6 +11,7 @@ import UIKit
 class EpisodeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var episodes = GOTEpisode.allEpisodes
     
@@ -18,6 +19,7 @@ class EpisodeViewController: UIViewController {
     super.viewDidLoad()
     tableView.dataSource = self
     tableView.delegate = self
+    searchBar.delegate = self
   }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -34,9 +36,15 @@ extension EpisodeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        var cellString = "EpisodeCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath) as? showCellTableViewCell else {
+        if episodes[indexPath.row].season % 2 == 0 {
+            cellString = "EpisodeCellTwo"
+        } else {
+            cellString = "EpisodeCell"
+        }
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellString, for: indexPath) as? showCellTableViewCell else {
             return UITableViewCell()
         }
         let episodeToSet = episodes[indexPath.row]
@@ -51,5 +59,13 @@ extension EpisodeViewController: UITableViewDataSource {
 extension EpisodeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+}
+
+extension EpisodeViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        guard let searchText = searchBar.text else { return }
+        episodes = GOTEpisode.allEpisodes.filter {$0.name.lowercased().contains(searchText.lowercased())}
     }
 }

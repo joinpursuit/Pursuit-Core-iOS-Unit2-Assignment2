@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eev-Ld-Dru">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeCell" rowHeight="156" id="MMR-xM-fzK" customClass="showCellTableViewCell" customModule="GameOfThrones" customModuleProvider="target">
@@ -66,7 +66,7 @@
                                             <segue destination="bsp-cQ-X4G" kind="show" id="pEX-Cn-2yY"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeCellTwo" rowHeight="158" id="cTn-h0-fJH" customClass="secondCellTableViewCell" customModule="GameOfThrones" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeCellTwo" rowHeight="158" id="cTn-h0-fJH" customClass="showCellTableViewCell" customModule="GameOfThrones" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="184" width="414" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cTn-h0-fJH" id="fes-ab-517">
@@ -103,25 +103,33 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="episodeImage" destination="3fo-cw-Yib" id="D9I-kI-DLt"/>
-                                            <outlet property="episodeName" destination="Td8-cN-Zo3" id="Nj3-a4-1bh"/>
-                                            <outlet property="episodeSeasonAndNumber" destination="sSv-BJ-C0c" id="jca-da-pQH"/>
+                                            <outlet property="episodeImage" destination="3fo-cw-Yib" id="0e1-UO-O0u"/>
+                                            <outlet property="episodeName" destination="Td8-cN-Zo3" id="CXF-W4-SQC"/>
+                                            <outlet property="seasonAndEpisodeLabel" destination="sSv-BJ-C0c" id="Xts-9j-KvT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="oTa-Ti-XOG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="oTa-Ti-XOG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0Mj-DT-hip"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eev-Ld-Dru" secondAttribute="bottom" id="0cj-KQ-Pze"/>
+                            <constraint firstItem="oTa-Ti-XOG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FTt-RZ-sFh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eev-Ld-Dru" secondAttribute="trailing" id="Iby-w2-NVb"/>
+                            <constraint firstItem="eev-Ld-Dru" firstAttribute="top" secondItem="oTa-Ti-XOG" secondAttribute="bottom" id="Pfv-E3-csZ"/>
+                            <constraint firstItem="oTa-Ti-XOG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZXR-6G-ibr"/>
                             <constraint firstItem="eev-Ld-Dru" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pd9-aQ-n7p"/>
-                            <constraint firstItem="eev-Ld-Dru" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qIf-OG-4UL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="obb-se-D0U"/>
                     <connections>
+                        <outlet property="searchBar" destination="oTa-Ti-XOG" id="Udy-i2-1VO"/>
                         <outlet property="tableView" destination="eev-Ld-Dru" id="Q69-L1-IKK"/>
                     </connections>
                 </viewController>
