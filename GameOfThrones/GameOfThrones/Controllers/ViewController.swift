@@ -12,24 +12,40 @@ class ViewController: UIViewController {
     
     //outlets
     @IBOutlet weak var showTableView: UITableView!
+    func tableView(_ tableView: UITableView,
+                   titleForHeaderInSection section: Int) -> String?{
+        return "season 1"
+    }
+    
     
     
     //variables
     var allEpisodes = GOTEpisode.allEpisodes
+    var seasonMatrix = [[GOTEpisode]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         showTableView.dataSource = self
         showTableView.delegate = self
+        
+        
+        for episode in allEpisodes {
+            var season = 1
+            seasonMatrix.append(allEpisodes.filter{ $0.season <= season })
+            season += 1
+            print(seasonMatrix)
+        
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       guard let DisplayView = segue.destination as? DisplayViewController else { return }
-       let episode = allEpisodes[IndexPath.row]
-        
-        
+       guard let indexPath = showTableView.indexPathForSelectedRow, let DisplayView = segue.destination as? DisplayViewController else { return }
+       let episode = allEpisodes[indexPath.row]
+        DisplayView.episode = episode
     }
 }
+
+
 
 extension ViewController: UITableViewDataSource{
     //numberOfRowsInSection

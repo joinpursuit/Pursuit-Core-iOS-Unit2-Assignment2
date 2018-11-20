@@ -20,12 +20,18 @@ class DisplayViewController: UIViewController {
     @IBOutlet weak var singleEpisodeAirDate: UILabel!
     @IBOutlet weak var singleEpisodeDescription: UITextView!
     
+    var episode: GOTEpisode!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
-    }
+        singleEpisodeSeason.text = ("Season: \(episode.season)")
+        singleEpisodeRunTime.text = ("RunTime: \(episode.runtime)")
+        singleEpisodeImage.image = UIImage(named: episode.originalImageID)
+        singleEpisodeName.text = episode.name
+        singleEpisodeEpisode.text = ("Episode: \(episode.number)")
+        singleEpisodeDescription.text = episode.summary
+        singleEpisodeAirDate.text = ("AirDate: \(episode.airdate)")
+        }
     
 
     
