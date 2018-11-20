@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     var entireGOT = GOTEpisode.allEpisodes
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+
     var array = [[GOTEpisode]]()
     var gotSeason: Int? = nil
     var seasonEp = [Int]()
@@ -27,8 +29,6 @@ class ViewController: UIViewController {
                 }
             array[array.endIndex - 1].append(episode)
         }
-        print(seasonEp)
-        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? DetailViewController, let cellSelected = tableView.indexPathForSelectedRow else {return}
@@ -36,7 +36,6 @@ class ViewController: UIViewController {
         destination.episode = episodeSelected
     }
 }
-
 extension ViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return array.count
