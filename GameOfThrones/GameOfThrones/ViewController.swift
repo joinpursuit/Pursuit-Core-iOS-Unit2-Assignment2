@@ -12,17 +12,26 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
+  @IBOutlet weak var searchBar: UISearchBar!
+  
   private var allEpisodes = GOTEpisode.allEpisodes
   
-  var arrOfFilteredSeasons = [
-    GOTEpisode.allEpisodes.filter{$0.season == 1},GOTEpisode.allEpisodes.filter{$0.season == 2}, GOTEpisode.allEpisodes.filter{$0.season == 3}, GOTEpisode.allEpisodes.filter{$0.season == 4},GOTEpisode.allEpisodes.filter{$0.season == 5}, GOTEpisode.allEpisodes.filter{$0.season == 6},GOTEpisode.allEpisodes.filter{$0.season == 7} ]
+  var userSearchWord: String?
   
+  
+  var arrOfFilteredSeasons = [
+    GOTEpisode.allEpisodes.filter{$0.season == 1},GOTEpisode.allEpisodes.filter{$0.season == 2}, GOTEpisode.allEpisodes.filter{$0.season == 3}, GOTEpisode.allEpisodes.filter{$0.season == 4},GOTEpisode.allEpisodes.filter{$0.season == 5}, GOTEpisode.allEpisodes.filter{$0.season == 6},GOTEpisode.allEpisodes.filter{$0.season == 7} ]{
+    didSet{
+      self.tableView.reloadData()
+    }
+  }
   
   override func viewDidLoad() {
     
     super.viewDidLoad()
     tableView.delegate = self
     tableView.dataSource = self
+    searchBar.delegate = self
     
   }
   
@@ -83,4 +92,24 @@ extension ViewController: UITableViewDelegate{
   }
 }
 
+extension ViewController: UISearchBarDelegate{
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    self.userSearchWord = searchBar.text
+    searchBar.resignFirstResponder()
+    
+    guard let searchText = searchBar.text else {return}
+    guard !searchText.isEmpty else {return}
+    
+    var filteredEpisodeArr = [[GOTEpisode]]()
+    
+    for arrayInMatrix in arrOfFilteredSeasons{
+      for episode in arrayInMatrix{
+        if episode.name.lowercased().contains(searchText.lowercased()){
+          filteredEpisodeArr.append([episode])
+          arrOfFilteredSeasons = filteredEpisodeArr
+        }
+      }
+    }
+  }
+}
 

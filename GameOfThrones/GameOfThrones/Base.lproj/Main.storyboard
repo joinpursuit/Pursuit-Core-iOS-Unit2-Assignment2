@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xda-9C-ltZ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="125" width="375" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GOTCell" rowHeight="100" id="zzS-4y-OIH" customClass="CustomDisplayCell" customModule="GameOfThrones" customModuleProvider="target">
@@ -117,18 +117,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nWH-f3-lV1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xda-9C-ltZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="70w-LL-0lT"/>
-                            <constraint firstItem="xda-9C-ltZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="C8n-ux-OLS"/>
-                            <constraint firstItem="xda-9C-ltZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LMF-pr-v7n"/>
-                            <constraint firstItem="xda-9C-ltZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zIE-Xh-YDh"/>
+                            <constraint firstItem="nWH-f3-lV1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5bi-cK-jb4"/>
+                            <constraint firstItem="xda-9C-ltZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KW8-kX-4eB"/>
+                            <constraint firstItem="xda-9C-ltZ" firstAttribute="top" secondItem="nWH-f3-lV1" secondAttribute="bottom" constant="5" id="Ovn-uM-Iba"/>
+                            <constraint firstItem="xda-9C-ltZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="S45-2Z-loF"/>
+                            <constraint firstItem="nWH-f3-lV1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wzj-Xy-LW4"/>
+                            <constraint firstItem="xda-9C-ltZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YYd-Ah-Yl0"/>
+                            <constraint firstItem="nWH-f3-lV1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vVE-nH-MRg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="KNv-m9-AJN"/>
                     <connections>
+                        <outlet property="searchBar" destination="nWH-f3-lV1" id="hAm-hS-zsb"/>
                         <outlet property="tableView" destination="xda-9C-ltZ" id="zbM-do-UYw"/>
                     </connections>
                 </viewController>
