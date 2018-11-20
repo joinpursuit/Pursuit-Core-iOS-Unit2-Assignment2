@@ -13,6 +13,7 @@
 		57D0D231219F70EA00B5753A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D230219F70EA00B5753A /* Assets.xcassets */; };
 		57D0D234219F70EA00B5753A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */; };
 		57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */; };
+		93968BAC21A33F5F00C13662 /* GOTViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93968BAB21A33F5F00C13662 /* GOTViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		57D0D233219F70EA00B5753A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57D0D235219F70EA00B5753A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		93968BAB21A33F5F00C13662 /* GOTViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		57D0D228219F70EA00B5753A /* GameOfThrones */ = {
 			isa = PBXGroup;
 			children = (
-				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
-				57D0D22B219F70EA00B5753A /* ViewController.swift */,
-				57D0D22D219F70EA00B5753A /* Main.storyboard */,
-				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
-				57D0D230219F70EA00B5753A /* Assets.xcassets */,
-				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
+				93F3A54D219F7C7700AD2CD3 /* Model */,
+				93F3A54C219F7C6800AD2CD3 /* View */,
+				93F3A54E219F7C7F00AD2CD3 /* Controller */,
+				93F3A54F219F7CA300AD2CD3 /* Supporting Files */,
 				57D0D235219F70EA00B5753A /* Info.plist */,
 			);
 			path = GameOfThrones;
+			sourceTree = "<group>";
+		};
+		93F3A54C219F7C6800AD2CD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D22D219F70EA00B5753A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		93F3A54D219F7C7700AD2CD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		93F3A54E219F7C7F00AD2CD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D22B219F70EA00B5753A /* ViewController.swift */,
+				93968BAB21A33F5F00C13662 /* GOTViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		93F3A54F219F7CA300AD2CD3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
+				57D0D230219F70EA00B5753A /* Assets.xcassets */,
+				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */,
+				93968BAC21A33F5F00C13662 /* GOTViewCell.swift in Sources */,
 				57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */,
 				57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */,
 			);
@@ -288,6 +324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GameOfThrones/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GameOfThrones/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
