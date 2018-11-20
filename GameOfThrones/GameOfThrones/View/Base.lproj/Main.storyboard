@@ -65,6 +65,49 @@
                                             <segue destination="rVI-Y8-F6D" kind="show" id="eYc-hm-5W9"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCellTwo" rowHeight="156" id="bhg-3i-MRp" customClass="GOTViewCell" customModule="GameOfThrones" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="184" width="414" height="156"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bhg-3i-MRp" id="Xef-cv-EzN">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="155.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wd6-T1-ciu">
+                                                    <rect key="frame" x="241" y="11" width="153" height="133.5"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFh-nh-ELI">
+                                                    <rect key="frame" x="8" y="42" width="208" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkQ-Ce-LKR">
+                                                    <rect key="frame" x="8" y="79" width="208" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GFh-nh-ELI" firstAttribute="leading" secondItem="Wd6-T1-ciu" secondAttribute="trailing" constant="-386" id="0jL-qj-qtL"/>
+                                                <constraint firstItem="GFh-nh-ELI" firstAttribute="centerY" secondItem="Wd6-T1-ciu" secondAttribute="centerY" multiplier="0.7" constant="-2.1749999999999972" id="1UF-fo-cZa"/>
+                                                <constraint firstAttribute="bottom" secondItem="Wd6-T1-ciu" secondAttribute="bottom" constant="11" id="3G7-Ps-pYb"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wd6-T1-ciu" secondAttribute="trailing" constant="20" id="9M2-Rc-RGI"/>
+                                                <constraint firstItem="Wd6-T1-ciu" firstAttribute="top" secondItem="Xef-cv-EzN" secondAttribute="top" constant="11" id="Ixh-TQ-Hvc"/>
+                                                <constraint firstItem="Wd6-T1-ciu" firstAttribute="leading" secondItem="Xef-cv-EzN" secondAttribute="leading" constant="241" id="J6p-Bv-YBN"/>
+                                                <constraint firstItem="VkQ-Ce-LKR" firstAttribute="centerY" secondItem="Wd6-T1-ciu" secondAttribute="centerY" multiplier="1.25" constant="-7.6875" id="Kim-as-Jmq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="VkQ-Ce-LKR" secondAttribute="trailing" constant="178" id="bgU-cH-ATp"/>
+                                                <constraint firstItem="VkQ-Ce-LKR" firstAttribute="leading" secondItem="Wd6-T1-ciu" secondAttribute="trailing" constant="-386" id="iiO-Qb-I9y"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="GFh-nh-ELI" secondAttribute="trailing" constant="178" id="mvB-4Z-hTP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="gotImage" destination="Wd6-T1-ciu" id="908-kl-al6"/>
+                                            <outlet property="gotInfo" destination="VkQ-Ce-LKR" id="mfH-qq-djh"/>
+                                            <outlet property="gotTitle" destination="GFh-nh-ELI" id="cGg-TY-nJx"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

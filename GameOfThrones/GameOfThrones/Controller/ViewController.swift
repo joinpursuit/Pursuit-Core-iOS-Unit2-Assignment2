@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     var entireGOT = GOTEpisode.allEpisodes
-    var seasons = 0
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -30,36 +29,24 @@ extension ViewController: UITableViewDataSource {
         return entireGOT.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as? GOTViewCell else {return UITableViewCell()}
+        var cellString: String = "tableCell"
+        if entireGOT[indexPath.row].season % 2 == 0 {
+            cellString = "tableCellTwo"
+        } else {
+            cellString = "tableCell"
+        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellString, for: indexPath) as? GOTViewCell else {return UITableViewCell()}
         let episodeToSet = entireGOT[indexPath.row]
         cell.gotImage.image = UIImage(named: episodeToSet.mediumImageID)
         cell.gotTitle.text = episodeToSet.name
         cell.gotInfo.text = "Season: \(episodeToSet.season) Episode: \(episodeToSet.number)"
         return cell
+        
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "Season \(section)"
-        case 1:
-            return "Season \(section)"
-        case 2:
-            return "Season \(section)"
-        case 3:
-            return "Season \(section)"
-        case 4:
-            return "Season \(section)"
-        case 5:
-            return "Season \(section)"
-        case 6:
-            return "Season \(section)"
-        case 7:
-            return "Season \(section)"
-        default:
-        return "Testing"
-        }
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return GOTEpisode
+//    }
 }
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
