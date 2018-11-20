@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    private var episodes = [GOTEpisode]()
+    private var refreshControl: UIRefreshControl!
     
     
     var gotSeasonArr = [[GOTEpisode]]() {
@@ -21,15 +21,29 @@ class ViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    
+    private func filterSeason () -> [[GOTEpisode]] {
+        gotSeasonArr = [GOTEpisode.allEpisodes.filter{$0.season == 1}, GOTEpisode.allEpisodes.filter{$0.season == 2},GOTEpisode.allEpisodes.filter{$0.season == 3},GOTEpisode.allEpisodes.filter{$0.season == 4},GOTEpisode.allEpisodes.filter{$0.season == 5},GOTEpisode.allEpisodes.filter{$0.season == 6}, GOTEpisode.allEpisodes.filter{$0.season == 7}]
+        return gotSeasonArr
+    }
     override func viewDidLoad() {
     super.viewDidLoad()
-    gotSeasonArr = [GOTEpisode.allEpisodes.filter{$0.season == 1}, GOTEpisode.allEpisodes.filter{$0.season == 2},GOTEpisode.allEpisodes.filter{$0.season == 3},GOTEpisode.allEpisodes.filter{$0.season == 4},GOTEpisode.allEpisodes.filter{$0.season == 5},GOTEpisode.allEpisodes.filter{$0.season == 6}, GOTEpisode.allEpisodes.filter{$0.season == 7}]
+    gotSeasonArr = filterSeason()
     tableView.delegate = self
     tableView.dataSource = self
     searchBar.delegate = self
+    setupRefreshControl()
   }
+    private func setupRefreshControl() {
+        refreshControl = UIRefreshControl ()
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(fetchGOT), for: .valueChanged)
+    }
     
+    @objc private func fetchGOT(){
+        refreshControl.endRefreshing()
+        gotSeasonArr = filterSeason()
+        
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow,
