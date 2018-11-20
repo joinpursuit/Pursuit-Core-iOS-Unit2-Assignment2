@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
    
     private var episodes = GOTEpisode.allEpisodes
     var theSeasons = [GOTEpisode.allEpisodes.filter {$0.season == 1},
@@ -24,6 +25,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     tableView.delegate = self
     tableView.dataSource = self
+    searchBar.delegate = self
    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,6 +84,11 @@ extension ViewController: UITableViewDataSource {
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 100
    }
-        
 }
-
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        guard let searchtext = searchBar.text else  {return}
+        theSeasons = [GOTEpisode.allEpisodes.filter {$0.name.lowercased().contains(searchtext.lowercased())}]
+    }
+}

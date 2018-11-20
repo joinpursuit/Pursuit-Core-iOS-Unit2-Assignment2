@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2FH-XU-f0t">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="634"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameofThronesCell" rowHeight="100" id="3mc-B0-z17" customClass="gotcellTableViewCell" customModule="GameOfThrones" customModuleProvider="target">
@@ -129,18 +129,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="YOg-Ge-pJW">
+                                <rect key="frame" x="0.0" y="88" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="2FH-XU-f0t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Y6M-9b-eet"/>
+                            <constraint firstItem="YOg-Ge-pJW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PHF-Nw-HUq"/>
+                            <constraint firstItem="2FH-XU-f0t" firstAttribute="top" secondItem="YOg-Ge-pJW" secondAttribute="bottom" id="YFO-Ri-g0t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2FH-XU-f0t" secondAttribute="bottom" id="cjS-Qv-2i2"/>
+                            <constraint firstItem="YOg-Ge-pJW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hao-uI-YhJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2FH-XU-f0t" secondAttribute="trailing" id="iXD-EG-XX1"/>
                             <constraint firstItem="2FH-XU-f0t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rG0-ME-yU2"/>
+                            <constraint firstItem="YOg-Ge-pJW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tZr-np-pQL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Ex-HE-pod"/>
                     <connections>
+                        <outlet property="searchBar" destination="YOg-Ge-pJW" id="0Bs-33-r5M"/>
                         <outlet property="tableView" destination="2FH-XU-f0t" id="oU8-xz-I00"/>
                     </connections>
                 </viewController>
