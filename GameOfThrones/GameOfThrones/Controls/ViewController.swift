@@ -25,12 +25,16 @@ class ViewController: UIViewController {
         gotSeasonArr = [GOTEpisode.allEpisodes.filter{$0.season == 1}, GOTEpisode.allEpisodes.filter{$0.season == 2},GOTEpisode.allEpisodes.filter{$0.season == 3},GOTEpisode.allEpisodes.filter{$0.season == 4},GOTEpisode.allEpisodes.filter{$0.season == 5},GOTEpisode.allEpisodes.filter{$0.season == 6}, GOTEpisode.allEpisodes.filter{$0.season == 7}]
         return gotSeasonArr
     }
+    fileprivate func extractedFunc() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        searchBar.delegate = self
+    }
+    
     override func viewDidLoad() {
     super.viewDidLoad()
     gotSeasonArr = filterSeason()
-    tableView.delegate = self
-    tableView.dataSource = self
-    searchBar.delegate = self
+    extractedFunc()
     setupRefreshControl()
   }
     private func setupRefreshControl() {
@@ -113,7 +117,7 @@ extension ViewController: UISearchBarDelegate {
                 }
             }
         }
-        gotSeasonArr = emptyArray 
+        gotSeasonArr = emptyArray
         
     }
 }
