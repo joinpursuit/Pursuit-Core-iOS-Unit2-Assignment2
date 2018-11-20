@@ -56,11 +56,11 @@
 		57D0D228219F70EA00B5753A /* GameOfThrones */ = {
 			isa = PBXGroup;
 			children = (
-				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
 				57D0D22B219F70EA00B5753A /* ViewController.swift */,
 				57D0D22D219F70EA00B5753A /* Main.storyboard */,
 				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
 				57D0D230219F70EA00B5753A /* Assets.xcassets */,
+				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
 				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
 				57D0D235219F70EA00B5753A /* Info.plist */,
 			);
