@@ -13,18 +13,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    private var episodes = [GOTEpisode]() {
-        didSet {
+    private var episodes = [GOTEpisode]()
+    
+    
+    var gotSeasonArr = [[GOTEpisode]]() {
+        didSet{
             tableView.reloadData()
         }
     }
     
-    
-    var seasonsArr = [GOTEpisode.allEpisodes.filter{$0.season == 1}, GOTEpisode.allEpisodes.filter{$0.season == 2},GOTEpisode.allEpisodes.filter{$0.season == 3},GOTEpisode.allEpisodes.filter{$0.season == 4},GOTEpisode.allEpisodes.filter{$0.season == 5},GOTEpisode.allEpisodes.filter{$0.season == 6}, GOTEpisode.allEpisodes.filter{$0.season == 7}]
-    
     override func viewDidLoad() {
     super.viewDidLoad()
-    episodes = GOTEpisode.allEpisodes
+    gotSeasonArr = [GOTEpisode.allEpisodes.filter{$0.season == 1}, GOTEpisode.allEpisodes.filter{$0.season == 2},GOTEpisode.allEpisodes.filter{$0.season == 3},GOTEpisode.allEpisodes.filter{$0.season == 4},GOTEpisode.allEpisodes.filter{$0.season == 5},GOTEpisode.allEpisodes.filter{$0.season == 6}, GOTEpisode.allEpisodes.filter{$0.season == 7}]
     tableView.delegate = self
     tableView.dataSource = self
     searchBar.delegate = self
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow,
             let gotDetailViewController = segue.destination as? GotDetailViewController else {return}
-        let episode = seasonsArr[indexPath.section][indexPath.row] 
+        let episode = gotSeasonArr[indexPath.section][indexPath.row] 
         gotDetailViewController.episode = episode
     }
 }
@@ -43,15 +43,15 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return seasonsArr[section].count
+        return gotSeasonArr[section].count
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return seasonsArr.count
+        return gotSeasonArr.count
     }
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let episode = seasonsArr[indexPath.section][indexPath.row]
+        let episode = gotSeasonArr[indexPath.section][indexPath.row]
         var resultCell = UITableViewCell()
         if episode.season % 2 == 0 {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameOfThronesCell2", for: indexPath) as? GotCellTableViewCell else {fatalError("GOT cell not found")}
@@ -72,26 +72,10 @@ extension ViewController: UITableViewDataSource {
     
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "Season 1"
-        case 1:
-            return "Season 2"
-        case 2:
-            return "Season 3"
-        case 3:
-            return "Season 4"
-        case 4:
-            return "Season 5"
-        case 5:
-            return "Season 6"
-        case 6:
-            return "Season 7"
-        default:
-            return "Rest"
+        return "Season \(section + 1)"
         }
     }
-    }
+
 
 
 extension ViewController: UITableViewDelegate {
@@ -105,7 +89,17 @@ extension ViewController: UISearchBarDelegate {
         
         searchBar.resignFirstResponder()
         guard let searchText = searchBar.text else {return}
+        var emptyArray = [[GOTEpisode]]()
+        for seasons in gotSeasonArr {
+            for episode in seasons{
+                if episode.name.lowercased().contains(searchText.lowercased()) {
+                
+                    emptyArray.append([episode])
+                   
+                }
+            }
+        }
+        gotSeasonArr = emptyArray
         
-        episodes = episodes.filter{$0.name.lowercased().contains(searchText.lowercased())}
     }
 }
