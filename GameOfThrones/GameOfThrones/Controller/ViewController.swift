@@ -18,6 +18,11 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? DetailViewController, let cellSelected = tableView.indexPathForSelectedRow else {return}
+        let episodeSelected = entireGOT[cellSelected.row]
+        destination.episode = episodeSelected
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -32,11 +37,7 @@ extension ViewController: UITableViewDataSource {
         cell.gotInfo.text = "Season: \(episodeToSet.season) Episode: \(episodeToSet.number)"
         return cell
     }
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        var seasons = entireGOT.filter({$0.season})
-//        return
-//        
-//    }
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:

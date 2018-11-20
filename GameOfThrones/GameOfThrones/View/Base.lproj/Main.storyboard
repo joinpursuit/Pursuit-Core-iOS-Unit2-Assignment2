@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="1075.3623188405797" y="117.85714285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="8nj-ai-47u">
             <objects>
-                <viewController id="rVI-Y8-F6D" sceneMemberID="viewController">
+                <viewController id="rVI-Y8-F6D" customClass="DetailViewController" customModule="GameOfThrones" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EKO-GT-a2M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,6 +163,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MWz-ML-pof"/>
                     </view>
+                    <connections>
+                        <outlet property="gotAirDate" destination="0mw-St-R4S" id="60D-gS-3QZ"/>
+                        <outlet property="gotEpisode" destination="n5L-j0-Adx" id="Tg5-V0-qcZ"/>
+                        <outlet property="gotImageTwo" destination="ajn-DR-18c" id="QT7-7R-Wof"/>
+                        <outlet property="gotRunTime" destination="Hsl-VZ-gQq" id="a9D-G9-9Up"/>
+                        <outlet property="gotSeason" destination="Twh-5t-tiZ" id="Zz4-Uo-aHZ"/>
+                        <outlet property="gotTextView" destination="oUI-7J-eCt" id="1cb-tb-zqG"/>
+                        <outlet property="gotTitleTwo" destination="Bwx-b4-IBb" id="9Ag-6l-Xgm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skG-th-VqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
