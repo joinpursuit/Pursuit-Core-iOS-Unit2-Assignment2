@@ -12,21 +12,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
    
+    private var refreshControl: UIRefreshControl!
     private var episodes = GOTEpisode.allEpisodes
+    
     var theSeasons = [GOTEpisode.allEpisodes.filter {$0.season == 1},
                       GOTEpisode.allEpisodes.filter {$0.season == 2},
                       GOTEpisode.allEpisodes.filter {$0.season == 3},
                       GOTEpisode.allEpisodes.filter {$0.season == 4},
                       GOTEpisode.allEpisodes.filter {$0.season == 5},
                       GOTEpisode.allEpisodes.filter {$0.season == 6},
-                      GOTEpisode.allEpisodes.filter {$0.season == 7}]
+                      GOTEpisode.allEpisodes.filter {$0.season == 7}]{
+        didSet{
+            tableView.reloadData()
+        }
+    }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.delegate = self
     tableView.dataSource = self
     searchBar.delegate = self
+    theRefreshControl()
    }
+    
+    private func theRefreshControl() {
+        refreshControl = UIRefreshControl()
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(theSeason), for: .valueChanged)
+    }
+    @objc private func theSeason() {
+        refreshControl.endRefreshing()
+        episodes = GOTEpisode.allEpisodes
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow,
@@ -89,6 +106,9 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let searchtext = searchBar.text else  {return}
+        //theSeasons = [episodes.filter() {$0.name.lowercased().contains(searchtext.lowercased())}]
         theSeasons = [GOTEpisode.allEpisodes.filter {$0.name.lowercased().contains(searchtext.lowercased())}]
+//        /recipes = Recipe.getRecipes().filter {$0.name.lowercased().contains(searchText.lowercased())}
     }
+
 }
