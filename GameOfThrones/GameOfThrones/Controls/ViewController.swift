@@ -113,7 +113,7 @@ extension ViewController: UISearchBarDelegate {
                 }
             }
         }
-        gotSeasonArr = emptyArray
+        gotSeasonArr = emptyArray 
         
     }
 }
