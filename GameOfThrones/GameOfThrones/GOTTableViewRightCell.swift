@@ -11,9 +11,9 @@ import UIKit
 class GOTTableViewRightCell: UITableViewCell {
     @IBOutlet weak var myRightEpisodeImage: UIImageView!
     
-    @IBOutlet weak var GOTSeasonTitle: UILabel!
+    @IBOutlet weak var GOTRightSeasonTitle: UILabel!
     
-    @IBOutlet weak var SeasonNumber: UILabel!
+    @IBOutlet weak var RightSeasonNumberAndEpisode: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

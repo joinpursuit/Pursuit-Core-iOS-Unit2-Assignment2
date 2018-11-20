@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04ACF0B721A36FB000B213D9 /* GOTTableViewLeftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACF0B621A36FB000B213D9 /* GOTTableViewLeftCell.swift */; };
 		04ACF0B921A3705100B213D9 /* GOTTableViewRightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACF0B821A3705100B213D9 /* GOTTableViewRightCell.swift */; };
+		04ACF0BB21A3B9EB00B213D9 /* DetailedGOTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACF0BA21A3B9EB00B213D9 /* DetailedGOTViewController.swift */; };
 		57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D229219F70EA00B5753A /* AppDelegate.swift */; };
 		57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D22B219F70EA00B5753A /* ViewController.swift */; };
 		57D0D22F219F70EA00B5753A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D22D219F70EA00B5753A /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		04ACF0B621A36FB000B213D9 /* GOTTableViewLeftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTTableViewLeftCell.swift; sourceTree = "<group>"; };
 		04ACF0B821A3705100B213D9 /* GOTTableViewRightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTTableViewRightCell.swift; sourceTree = "<group>"; };
+		04ACF0BA21A3B9EB00B213D9 /* DetailedGOTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedGOTViewController.swift; sourceTree = "<group>"; };
 		57D0D226219F70EA00B5753A /* GameOfThrones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfThrones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D0D229219F70EA00B5753A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57D0D22B219F70EA00B5753A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
 				57D0D22B219F70EA00B5753A /* ViewController.swift */,
+				04ACF0BA21A3B9EB00B213D9 /* DetailedGOTViewController.swift */,
 				04ACF0B621A36FB000B213D9 /* GOTTableViewLeftCell.swift */,
 				04ACF0B821A3705100B213D9 /* GOTTableViewRightCell.swift */,
 				57D0D22D219F70EA00B5753A /* Main.storyboard */,
@@ -147,6 +150,7 @@
 				04ACF0B921A3705100B213D9 /* GOTTableViewRightCell.swift in Sources */,
 				57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */,
 				57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */,
+				04ACF0BB21A3B9EB00B213D9 /* DetailedGOTViewController.swift in Sources */,
 				04ACF0B721A36FB000B213D9 /* GOTTableViewLeftCell.swift in Sources */,
 				57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */,
 			);
