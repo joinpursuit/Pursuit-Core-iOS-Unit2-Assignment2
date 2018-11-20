@@ -8,8 +8,10 @@
 
 import UIKit
 //hi
-class ViewController: UIViewController {
+class EpisodeListViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -18,3 +20,4 @@ class ViewController: UIViewController {
 
 }
 
+//to flip each cell just use modulo even/odd for the episodes
