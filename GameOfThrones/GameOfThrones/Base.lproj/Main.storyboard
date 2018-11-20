@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game Of Thrones -->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GOTViewController" customModule="GameOfThrones" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lWc-w3-dHh">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="634"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GOTcell" rowHeight="100" id="Ib9-fS-EeX" customClass="CustomCell" customModule="GameOfThrones" customModuleProvider="target">
@@ -112,28 +112,37 @@
                                             <outlet property="GOTImage" destination="kW5-Fk-UzR" id="Qgx-Th-FL0"/>
                                             <outlet property="episodeName" destination="lqX-iB-h4O" id="u2J-7H-4yE"/>
                                             <outlet property="seasonEpisode" destination="lRR-5d-0JR" id="Bf9-j1-RFB"/>
+                                            <segue destination="9Rl-7u-RkX" kind="show" id="A0I-Kk-7bG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="OeM-FM-EzK">
+                                <rect key="frame" x="0.0" y="88" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lWc-w3-dHh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="37d-ue-6MG"/>
+                            <constraint firstItem="OeM-FM-EzK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5wK-fk-7Mo"/>
                             <constraint firstItem="lWc-w3-dHh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JgP-Ii-Tdq"/>
-                            <constraint firstItem="lWc-w3-dHh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VO9-dM-eu1"/>
+                            <constraint firstItem="OeM-FM-EzK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="am3-2D-4rl"/>
                             <constraint firstItem="lWc-w3-dHh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="h2S-h0-cC0"/>
+                            <constraint firstItem="OeM-FM-EzK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kvN-at-caz"/>
+                            <constraint firstItem="lWc-w3-dHh" firstAttribute="top" secondItem="OeM-FM-EzK" secondAttribute="bottom" id="s8p-Lj-Egd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="e6F-fu-VTr"/>
+                    <navigationItem key="navigationItem" title="Game Of Thrones " id="e6F-fu-VTr"/>
                     <connections>
+                        <outlet property="searchBat" destination="OeM-FM-EzK" id="fbI-j3-ou3"/>
                         <outlet property="tableView" destination="lWc-w3-dHh" id="eme-q1-xe7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="70.935960591133011"/>
+            <point key="canvasLocation" x="189.59999999999999" y="-240.14778325123154"/>
         </scene>
         <!--Detailed View Controller-->
         <scene sceneID="ZPm-2M-9pw">
@@ -224,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SIq-8p-563" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234.4000000000001" y="-137.4384236453202"/>
+            <point key="canvasLocation" x="1017" y="-250"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3hl-6A-mUO">
@@ -242,7 +251,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7j-lW-vLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-639.20000000000005" y="70.614692653673174"/>
+            <point key="canvasLocation" x="-550" y="-250"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hv0-v8-VRv"/>
+    </inferredMetricsTieBreakers>
 </document>
