@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Episode Guide View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GameOfThrones" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GOTEpisodeGuideViewController" customModule="GameOfThrones" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="leftSideCell" rowHeight="115" id="KgI-Xg-w2H">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="leftSideImgCell" rowHeight="115" id="KgI-Xg-w2H" customClass="leftSideImgCell" customModule="GameOfThrones" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KgI-Xg-w2H" id="INS-yw-fi8">
@@ -61,10 +61,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="episodeImg" destination="1d4-fI-dl5" id="sin-dI-akv"/>
+                                            <outlet property="episodeTitle" destination="YLq-sr-wjM" id="mpa-Ms-fiQ"/>
+                                            <outlet property="seasonAndEpisodeNum" destination="e2Q-On-rjh" id="OVs-Jo-8Ac"/>
                                             <segue destination="1iN-zk-Bu5" kind="show" id="Mp7-zx-yMd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rightSideCell" rowHeight="115" id="j1U-R0-gYV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rightSideImgCell" rowHeight="115" id="j1U-R0-gYV" customClass="rightSideImgCell" customModule="GameOfThrones" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="143" width="375" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j1U-R0-gYV" id="I8A-xk-c5O">
@@ -102,6 +105,11 @@
                                                 <constraint firstItem="ORP-Ik-yRE" firstAttribute="leading" secondItem="KnD-FS-FMb" secondAttribute="trailing" constant="12" id="s1n-1k-pZX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="episodeImg" destination="ORP-Ik-yRE" id="5ve-dV-rds"/>
+                                            <outlet property="episodeTitle" destination="KnD-FS-FMb" id="yod-iu-xSC"/>
+                                            <outlet property="seasonAndEpisodeNum" destination="j82-f8-dSV" id="piL-m4-fQ8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -116,15 +124,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="hKX-1f-iW1"/>
+                    <connections>
+                        <outlet property="tabelView" destination="vxC-ew-uwY" id="8Wr-5J-dx4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044" y="128.18590704647679"/>
         </scene>
-        <!--View Controller-->
+        <!--Episode Summary Controller-->
         <scene sceneID="pL0-09-wm3">
             <objects>
-                <viewController id="1iN-zk-Bu5" sceneMemberID="viewController">
+                <viewController id="1iN-zk-Bu5" customClass="GOTEpisodeSummaryController" customModule="GameOfThrones" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TqG-wa-1Oo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,38 +147,38 @@
                                     <constraint firstAttribute="width" constant="290" id="alF-EA-3hm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcm-xG-scS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcm-xG-scS">
                                 <rect key="frame" x="25" y="267" width="325" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShQ-aG-wMo">
-                                <rect key="frame" x="25" y="313" width="325" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season: #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShQ-aG-wMo">
+                                <rect key="frame" x="25" y="313" width="325" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzl-c3-hBP">
-                                <rect key="frame" x="25" y="374.5" width="325" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Runtime: #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzl-c3-hBP">
+                                <rect key="frame" x="25" y="375" width="325" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmx-dP-dcE">
-                                <rect key="frame" x="25" y="343.5" width="325" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode: #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmx-dP-dcE">
+                                <rect key="frame" x="25" y="344" width="325" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GG1-mF-jd1">
-                                <rect key="frame" x="25" y="405.5" width="325" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Airdate: date(#)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GG1-mF-jd1">
+                                <rect key="frame" x="25" y="406" width="325" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qU3-Vu-Tix">
-                                <rect key="frame" x="30" y="461.5" width="315" height="167"/>
+                                <rect key="frame" x="30" y="462" width="315" height="167"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="167" id="pMH-NJ-Rx5"/>
@@ -202,6 +213,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4l3-im-ij5"/>
                     </view>
+                    <connections>
+                        <outlet property="episodeAirdate" destination="GG1-mF-jd1" id="Ccz-DM-Sle"/>
+                        <outlet property="episodeImg" destination="CRW-zU-gUY" id="5I1-rH-uHh"/>
+                        <outlet property="episodeNum" destination="wmx-dP-dcE" id="1VI-Be-KhD"/>
+                        <outlet property="episodeRuntime" destination="uzl-c3-hBP" id="afl-la-C9u"/>
+                        <outlet property="episodeSummary" destination="qU3-Vu-Tix" id="bZb-Lv-uHf"/>
+                        <outlet property="episodeTitle" destination="Fcm-xG-scS" id="urM-jS-NNa"/>
+                        <outlet property="seasonNum" destination="ShQ-aG-wMo" id="O9j-AA-PWI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3YN-c7-z0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

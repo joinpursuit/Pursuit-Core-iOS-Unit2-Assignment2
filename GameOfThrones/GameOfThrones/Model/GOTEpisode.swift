@@ -18,6 +18,7 @@ class GOTEpisode {
     var summary: String
     var mediumImageID: String
     var originalImageID: String
+    
     init(airdate: String, id: Int, name: String, number: Int, season: Int, runtime: Int, summary: String, mediumImageID: String, originalImageID: String) {
         self.airdate = airdate
         self.id = id
