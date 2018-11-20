@@ -9,10 +9,10 @@
 import UIKit
 
 class CustomDisplayCell: UITableViewCell {
-
-    @IBOutlet weak var gOTImage: UIImageView!
-    @IBOutlet weak var episodeName: UILabel!
-    @IBOutlet weak var seasonEpisode: UILabel!
-    
-
+  
+  @IBOutlet weak var gOTImage: UIImageView!
+  @IBOutlet weak var episodeName: UILabel!
+  @IBOutlet weak var seasonEpisode: UILabel!
+  
+  
 }
