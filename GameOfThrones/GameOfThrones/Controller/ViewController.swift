@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     var entireGOT = GOTEpisode.allEpisodes
     @IBOutlet weak var tableView: UITableView!
-    var array = [[Any]]()
+    var array = [[GOTEpisode]]()
     var gotSeason: Int? = nil
     var seasonEp = [Int]()
     override func viewDidLoad() {
@@ -32,24 +32,27 @@ class ViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? DetailViewController, let cellSelected = tableView.indexPathForSelectedRow else {return}
-        let episodeSelected = entireGOT[cellSelected.row]
+        let episodeSelected = array[cellSelected.section][cellSelected.row]
         destination.episode = episodeSelected
     }
 }
 
 extension ViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return array.count
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array[section].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cellString: String = "tableCell"
-        if entireGOT[indexPath.row].season % 2 == 0 {
+        var cellString: String
+        if array[indexPath.section][indexPath.row].season % 2 == 0 {
             cellString = "tableCellTwo"
         } else {
             cellString = "tableCell"
         }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellString, for: indexPath) as? GOTViewCell else {return UITableViewCell()}
-        let episodeToSet = entireGOT[indexPath.row]
+        let episodeToSet = array[indexPath.section][indexPath.row]
         cell.gotImage.image = UIImage(named: episodeToSet.mediumImageID)
         cell.gotTitle.text = episodeToSet.name
         cell.gotInfo.text = "Season: \(episodeToSet.season) Episode: \(episodeToSet.number)"
