@@ -8,34 +8,29 @@
 
 import UIKit
 
-var x:[[GOTEpisode]] = [[]]
-
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     private var allEpisodes = GOTEpisode.allEpisodes
     
-
+    var arrOfFilteredSeasons = [GOTEpisode.allEpisodes.filter{$0.season == 1},GOTEpisode.allEpisodes.filter{$0.season == 2}, GOTEpisode.allEpisodes.filter{$0.season == 3}, GOTEpisode.allEpisodes.filter{$0.season == 4},GOTEpisode.allEpisodes.filter{$0.season == 5}, GOTEpisode.allEpisodes.filter{$0.season == 6},GOTEpisode.allEpisodes.filter{$0.season == 7} ]
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        print("test test test")
         tableView.delegate = self
         tableView.dataSource = self
-//        searchBar.delegate = self
+        //        searchBar.delegate = self
         
     }
-    
-    var filteredBySeason = [[GOTEpisode.allEpisodes.filter{$0.season == 1}],[GOTEpisode.allEpisodes.filter{$0.season == 2}],[GOTEpisode.allEpisodes.filter{$0.season == 3}], [GOTEpisode.allEpisodes.filter{$0.season == 4}], [GOTEpisode.allEpisodes.filter{$0.season == 5}], [GOTEpisode.allEpisodes.filter{$0.season == 6}]]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow,
             let detailedGOTController = segue.destination as? DetailedGOTController else {return}
         
-        let currentEpisode = allEpisodes[indexPath.row]
-        
-        
+        let currentEpisode = arrOfFilteredSeasons[indexPath.section][indexPath.row]
         detailedGOTController.episode = currentEpisode
     }
     
@@ -45,15 +40,15 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allEpisodes.count
+        return arrOfFilteredSeasons[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let currentEpisode = allEpisodes[indexPath.row]
+        let currentEpisode = arrOfFilteredSeasons[indexPath.section][indexPath.row]
         var finalCell = UITableViewCell()
         
-        if currentEpisode.season % 2 == 0{
+        if  currentEpisode.season % 2 == 0{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "GOTCellTwo", for: indexPath) as? CustomDisplayCell else {fatalError("GOTCellTwo not found")}
             cell.gOTImage.image = UIImage(named: currentEpisode.mediumImageID)
             cell.episodeName.text = currentEpisode.name
@@ -65,41 +60,31 @@ extension ViewController: UITableViewDataSource{
             
             cell.gOTImage.image = UIImage(named: currentEpisode.mediumImageID)
             cell.episodeName.text = currentEpisode.name
-            cell.seasonEpisode.text = "S: \(currentEpisode.season). Episode: \(currentEpisode.number)"
+            cell.seasonEpisode.text = "Season: \(currentEpisode.season). Episode: \(currentEpisode.number)"
             finalCell = cell
         }
         
         return finalCell
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return arrOfFilteredSeasons.count
+    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section{
-        case 1:
-            return "Season One"
-        case 2:
-            return "Season Two"
-        case 3:
-            return "Season Three"
-        case 4:
-            return "Season Four"
-        case 5:
-            return "Season Five"
-        case 6:
-            return "Season Six"
-        default:
-            return "invalid"
-        }
+        return ("Season \(section + 1)")
     }
+    
 }
 
 
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100 //why 100?
+        return 100
     }
 }
-//
+
+
 //extension ViewController: UISearchBarDelegate{
 //    //step two implement methods as needed or required if available
 //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -117,13 +102,3 @@ extension ViewController: UITableViewDelegate{
 //    }
 //}
 
-//    if currentEpisode.season % 2 == 0{
-//
-//    stringForTitle = "Section \(currentEpisode.season)"
-//
-//    } else if currentEpisode.season % 2 != 0 {
-//
-//    stringForTitle = "Section \(currentEpisode.season)"
-//    }
-//    return stringForTitle
-//}
