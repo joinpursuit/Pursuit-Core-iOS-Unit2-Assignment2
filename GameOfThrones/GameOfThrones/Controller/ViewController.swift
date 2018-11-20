@@ -32,9 +32,11 @@ extension ViewController: UITableViewDataSource {
         cell.gotInfo.text = "Season: \(episodeToSet.season) Episode: \(episodeToSet.number)"
         return cell
     }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        var seasons = entireGOT.filter({$0.season})
+//        return
+//        
+//    }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
