@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="111" id="xqE-9j-LRT" customClass="GOTviewCell" customModule="GameOfThrones" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GOTviewCell" rowHeight="111" id="xqE-9j-LRT" customClass="GOTviewCell" customModule="GameOfThrones" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xqE-9j-LRT" id="pHM-zd-jak">
@@ -77,6 +77,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="wjM-QV-8N9"/>
+                    <connections>
+                        <outlet property="showTableView" destination="cmG-KW-cMg" id="ece-Lo-PnF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,31 +94,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eUf-gN-rup">
-                                <rect key="frame" x="0.0" y="64" width="375" height="267"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4Q-oZ-1bh">
-                                <rect key="frame" x="67" y="396" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFr-cf-VZr">
-                                <rect key="frame" x="67" y="425" width="42" height="21"/>
+                                <rect key="frame" x="16" y="381" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLb-09-UuN">
-                                <rect key="frame" x="67" y="367" width="42" height="21"/>
+                                <rect key="frame" x="16" y="352" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1T-yb-41L">
-                                <rect key="frame" x="67" y="338" width="42" height="21"/>
+                                <rect key="frame" x="16" y="323" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -129,7 +125,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UH6-eL-xTX">
-                                <rect key="frame" x="166" y="366" width="42" height="21"/>
+                                <rect key="frame" x="166" y="288" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFr-cf-VZr">
+                                <rect key="frame" x="16" y="410" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -140,7 +143,7 @@
                         <constraints>
                             <constraint firstItem="eUf-gN-rup" firstAttribute="top" secondItem="qiy-K4-MTK" secondAttribute="top" id="7zO-k2-fNt"/>
                             <constraint firstItem="eUf-gN-rup" firstAttribute="leading" secondItem="qiy-K4-MTK" secondAttribute="leading" id="UkD-Dp-Z1p"/>
-                            <constraint firstItem="eUf-gN-rup" firstAttribute="height" secondItem="kxT-W4-Wx0" secondAttribute="height" multiplier="0.4" id="XKZ-Iy-kHS"/>
+                            <constraint firstItem="eUf-gN-rup" firstAttribute="height" secondItem="kxT-W4-Wx0" secondAttribute="height" multiplier="0.3" id="XKZ-Iy-kHS"/>
                             <constraint firstItem="qiy-K4-MTK" firstAttribute="bottom" secondItem="kMc-mI-l2X" secondAttribute="bottom" constant="11" id="YQc-eX-qeW"/>
                             <constraint firstItem="qiy-K4-MTK" firstAttribute="trailing" secondItem="eUf-gN-rup" secondAttribute="trailing" id="Zdq-qu-VIj"/>
                             <constraint firstItem="qiy-K4-MTK" firstAttribute="trailing" secondItem="kMc-mI-l2X" secondAttribute="trailing" constant="11" id="e6c-le-Jlk"/>
@@ -149,6 +152,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qiy-K4-MTK"/>
                     </view>
+                    <connections>
+                        <outlet property="singleEpisodeAirDate" destination="EFr-cf-VZr" id="ux6-UH-sk5"/>
+                        <outlet property="singleEpisodeDescription" destination="kMc-mI-l2X" id="inj-6G-ZWs"/>
+                        <outlet property="singleEpisodeEpisode" destination="vLb-09-UuN" id="WD5-yI-Hnj"/>
+                        <outlet property="singleEpisodeImage" destination="eUf-gN-rup" id="JCJ-fq-qqC"/>
+                        <outlet property="singleEpisodeName" destination="UH6-eL-xTX" id="JXJ-Pn-KDb"/>
+                        <outlet property="singleEpisodeRunTime" destination="Y4Q-oZ-1bh" id="4X4-cq-zIN"/>
+                        <outlet property="singleEpisodeSeason" destination="z1T-yb-41L" id="3QE-45-3nh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luS-WL-iRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

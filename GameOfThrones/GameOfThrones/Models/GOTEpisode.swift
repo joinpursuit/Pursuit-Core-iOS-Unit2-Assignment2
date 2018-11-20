@@ -20,6 +20,9 @@ class GOTEpisode {
     var summary: String
     var mediumImageID: String
     var originalImageID: String
+    var se: String {
+        return "S:\(season), E:\(number)"
+    }
  
     //initializers
     init(airdate: String, id: Int, name: String, number: Int, season: Int, runtime: Int, summary: String, mediumImageID: String, originalImageID: String) {

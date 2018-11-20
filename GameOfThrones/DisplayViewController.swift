@@ -10,21 +10,23 @@ import UIKit
 
 class DisplayViewController: UIViewController {
 
+    //outlets
+    
+    @IBOutlet weak var singleEpisodeImage: UIImageView!
+    @IBOutlet weak var singleEpisodeName: UILabel!
+    @IBOutlet weak var singleEpisodeSeason: UILabel!
+    @IBOutlet weak var singleEpisodeEpisode: UILabel!
+    @IBOutlet weak var singleEpisodeRunTime: UILabel!
+    @IBOutlet weak var singleEpisodeAirDate: UILabel!
+    @IBOutlet weak var singleEpisodeDescription: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
