@@ -11,11 +11,24 @@ import UIKit
 class ViewController: UIViewController {
     var entireGOT = GOTEpisode.allEpisodes
     @IBOutlet weak var tableView: UITableView!
-    
+    var array = [[Any]]()
+    var gotSeason: Int? = nil
+    var seasonEp = [Int]()
     override func viewDidLoad() {
     super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        for episode in entireGOT {
+            let season = episode.season
+                if season != gotSeason {
+                    array.append([])
+                    seasonEp.append(season)
+                    gotSeason = season
+                }
+            array[array.endIndex - 1].append(episode)
+        }
+        print(seasonEp)
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? DetailViewController, let cellSelected = tableView.indexPathForSelectedRow else {return}
@@ -26,7 +39,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return entireGOT.count
+        return array[section].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cellString: String = "tableCell"
@@ -41,12 +54,10 @@ extension ViewController: UITableViewDataSource {
         cell.gotTitle.text = episodeToSet.name
         cell.gotInfo.text = "Season: \(episodeToSet.season) Episode: \(episodeToSet.number)"
         return cell
-        
     }
-
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return GOTEpisode
-//    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Season \(seasonEp[section])"
+    }
 }
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

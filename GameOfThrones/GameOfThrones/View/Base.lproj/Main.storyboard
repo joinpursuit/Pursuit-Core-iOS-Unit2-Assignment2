@@ -106,6 +106,7 @@
                                             <outlet property="gotImage" destination="Wd6-T1-ciu" id="908-kl-al6"/>
                                             <outlet property="gotInfo" destination="VkQ-Ce-LKR" id="mfH-qq-djh"/>
                                             <outlet property="gotTitle" destination="GFh-nh-ELI" id="cGg-TY-nJx"/>
+                                            <segue destination="rVI-Y8-F6D" kind="show" id="tDK-An-Jul"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -239,4 +240,7 @@
             <point key="canvasLocation" x="438" y="118"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eYc-hm-5W9"/>
+    </inferredMetricsTieBreakers>
 </document>
