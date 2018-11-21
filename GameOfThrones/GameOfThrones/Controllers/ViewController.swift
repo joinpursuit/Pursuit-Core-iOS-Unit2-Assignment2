@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     //changes the name of the section
     func tableView(_ tableView: UITableView,
                    titleForHeaderInSection section: Int) -> String?{
-        return "season \(section + 1)"
+        return "Season \(section + 1)"
     }
     //creates sections
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,13 +59,26 @@ extension ViewController: UITableViewDataSource{
     
     //cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let episodeToSet = seasonMatrix[indexPath.section][indexPath.row]
+        
+        if indexPath.section % 2 == 0 {
         guard let cell = showTableView.dequeueReusableCell(withIdentifier: "GOTviewCell", for: indexPath) as? GOTviewCell else { return UITableViewCell() }
         
-        let episodeToSet = allEpisodes[indexPath.row]
+        
         cell.episodeName.text = episodeToSet.name
         cell.GOTimage.image = UIImage(named: episodeToSet.originalImageID)
         cell.seasonAndEpisode.text = episodeToSet.se
         return cell
+        } else {
+            guard let cell = showTableView.dequeueReusableCell(withIdentifier: "GOTviewCell2", for: indexPath) as? GOTviewCell else { return UITableViewCell() }
+            
+            
+            cell.episodeName.text = episodeToSet.name
+            cell.GOTimage.image = UIImage(named: episodeToSet.originalImageID)
+            cell.seasonAndEpisode.text = episodeToSet.se
+            return cell
+            
+        }
     }
     
 }
