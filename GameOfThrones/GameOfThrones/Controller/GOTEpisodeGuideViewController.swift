@@ -35,7 +35,13 @@ class GOTEpisodeGuideViewController: UIViewController {
     
     //prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+        
+        guard let indexPath = tableView.indexPathForSelectedRow,
+            let GOTEpisodeSummaryController = segue.destination as? GOTEpisodeSummaryController else { return }
+        
+        let episode = episodesBySeason[indexPath.section][indexPath.row]
+        
+        GOTEpisodeSummaryController.episode = episode
     }
     
 
@@ -60,16 +66,29 @@ extension GOTEpisodeGuideViewController: UITableViewDataSource {
 
     //setup row (cell)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = (indexPath.section % 2) == 0 ? "leftSideImgCell": "rightSideImgCell"
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? GOTEpisodeSummaryController else { fatalError("cell not found") }
         
         let episode = episodesBySeason[indexPath.section][indexPath.row]
         
-        cell.episodeImg.image = UIImage.init(named: episode.mediumImageID)
-        cell.episodeTitle.text = episode.name
-        cell.season
+        switch indexPath.section % 2 {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "leftSideImgCell", for: indexPath) as? leftSideImgCell else { fatalError("cell not found") }
+            
+            cell.episodeImg.image = UIImage.init(named: episode.mediumImageID)
+            cell.episodeTitle.text = episode.name
+            cell.seasonAndEpisodeNum.text = "S:\(episode.season)   E:\(episode.number)"
+            return cell
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "rightSideImgCell", for: indexPath) as? rightSideImgCell else { fatalError("cell not found") }
+            
+            cell.episodeImg.image = UIImage.init(named: episode.mediumImageID)
+            cell.episodeTitle.text = episode.name
+            cell.seasonAndEpisodeNum.text = "S:\(episode.season)   E:\(episode.number)"
+            return cell
+        default:
+            fatalError("indexPath.section not found")
+        }
     }
+    
 }
 
 //setup the height for each row
