@@ -26,7 +26,7 @@ class GOTEpisodeGuideViewController: UIViewController {
 
         for seasonNum in 1...totalSeasons {
             let currentSeasonEpisodes = allEpisodes.filter { (currentEpisode: GOTEpisode) -> Bool in
-                return currentEpisode.number == seasonNum
+                return currentEpisode.season == seasonNum
             }
             output.append(currentSeasonEpisodes)
         }
@@ -66,20 +66,20 @@ extension GOTEpisodeGuideViewController: UITableViewDataSource {
 
     //setup row (cell)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let episode = episodesBySeason[indexPath.section][indexPath.row]
         
         switch indexPath.section % 2 {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "leftSideImgCell", for: indexPath) as? leftSideImgCell else { fatalError("cell not found") }
-            
+
             cell.episodeImg.image = UIImage.init(named: episode.mediumImageID)
             cell.episodeTitle.text = episode.name
             cell.seasonAndEpisodeNum.text = "S:\(episode.season)   E:\(episode.number)"
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "rightSideImgCell", for: indexPath) as? rightSideImgCell else { fatalError("cell not found") }
-            
+
             cell.episodeImg.image = UIImage.init(named: episode.mediumImageID)
             cell.episodeTitle.text = episode.name
             cell.seasonAndEpisodeNum.text = "S:\(episode.season)   E:\(episode.number)"
@@ -88,6 +88,7 @@ extension GOTEpisodeGuideViewController: UITableViewDataSource {
             fatalError("indexPath.section not found")
         }
     }
+    
     
 }
 
