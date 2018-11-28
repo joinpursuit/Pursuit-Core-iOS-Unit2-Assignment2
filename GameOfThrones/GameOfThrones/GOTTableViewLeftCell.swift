@@ -15,17 +15,4 @@ class GOTTableViewLeftCell: UITableViewCell {
     @IBOutlet weak var GOTLeftSeasonTitle: UILabel!
     @IBOutlet weak var LeftSeasonNumberAndEpisode: UILabel!
    
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

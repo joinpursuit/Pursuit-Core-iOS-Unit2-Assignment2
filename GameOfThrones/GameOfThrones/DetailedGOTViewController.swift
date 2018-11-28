@@ -10,7 +10,9 @@ import UIKit
 
 class DetailedGOTViewController: UIViewController {
     
-    @IBOutlet weak var mediumImage: UIImageView!
+    var currentMovie: GOTEpisode!
+    
+    @IBOutlet weak var originalImage: UIImageView!
     @IBOutlet weak var subTitle: UILabel!
     @IBOutlet weak var season: UILabel!
     @IBOutlet weak var episode: UILabel!
@@ -20,19 +22,16 @@ class DetailedGOTViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateUI()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func updateUI(){
+        originalImage.image = UIImage(named: currentMovie.originalImageID)
+        subTitle.text = currentMovie.name
+        season.text = "Season: \(currentMovie.season)"
+        episode.text = "Episode: \(currentMovie.number)"
+        runTime.text = "Runtime: \(currentMovie.runtime)"
+        airDate.text = "AirDate: \(currentMovie.airdate)"
+        seasonSummary.text = currentMovie.summary
+        
     }
-    */
-
 }
