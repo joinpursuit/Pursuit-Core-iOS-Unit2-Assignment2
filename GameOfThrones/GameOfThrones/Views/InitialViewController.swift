@@ -17,6 +17,7 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
     super.viewDidLoad()
     introTableView.dataSource = self
+    introTableView.delegate = self
  
   }
 
@@ -30,9 +31,17 @@ extension InitialViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = introTableView.dequeueReusableCell(withIdentifier: "introToEpisodeCell", for: indexPath) as? introEpisodeTableViewCell else { return UITableViewCell() }
         
-        let episodeForCell = episodes[indexPath.row]
+        let episodeCell = episodes[indexPath.row]
+        
+        cell.textLabel?.text = episodeCell.name
+        
         
         return cell
     }
 }
 
+extension InitialViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}
