@@ -16,17 +16,65 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kaR-ss-0zp">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="introToEpisodeCell" id="cPI-gl-tyn" customClass="introEpisodeTableViewCell" customModule="GameOfThrones" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cPI-gl-tyn" id="dlL-qA-p0p">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzM-CD-cY9">
+                                                    <rect key="frame" x="15" y="-43" width="141" height="121"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="episodeOrderLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVb-sd-Ldr">
+                                                    <rect key="frame" x="228" y="23" width="147" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="episodeNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRZ-Yv-0dx">
+                                                    <rect key="frame" x="228" y="0.0" width="148" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="episodeImage" destination="lzM-CD-cY9" id="ByK-V3-ceg"/>
+                                            <outlet property="episodeNameLabel" destination="eRZ-Yv-0dx" id="Px2-cZ-9Ce"/>
+                                            <outlet property="episodeOrderLabel" destination="AVb-sd-Ldr" id="poe-Mz-06V"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.64621740640000003" green="1" blue="0.80148945930000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="kaR-ss-0zp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4fR-SY-Mnw"/>
+                            <constraint firstItem="kaR-ss-0zp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G8s-T7-dQd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kaR-ss-0zp" secondAttribute="trailing" id="QuX-Rd-du5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kaR-ss-0zp" secondAttribute="bottom" id="gIY-71-jDu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="leW-mf-dzf"/>
                     <connections>
+                        <outlet property="introTableView" destination="kaR-ss-0zp" id="JC2-dX-5QJ"/>
                         <segue destination="XGL-W2-EsH" kind="show" identifier="initialAndEpisode" id="0Xa-pS-MLy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="-131"/>
+            <point key="canvasLocation" x="1149" y="-418"/>
         </scene>
         <!--Episode View Controller-->
         <scene sceneID="FLl-UX-tGe">
@@ -41,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhK-Rr-dlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230" y="-208"/>
+            <point key="canvasLocation" x="2059" y="-472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fb0-wa-AKp">
@@ -59,7 +107,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKt-4e-MKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-381" y="-83"/>
+            <point key="canvasLocation" x="-338" y="-151"/>
         </scene>
     </scenes>
 </document>
