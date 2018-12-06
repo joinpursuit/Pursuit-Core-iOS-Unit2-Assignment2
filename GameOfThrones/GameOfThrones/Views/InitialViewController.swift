@@ -12,6 +12,7 @@ class InitialViewController: UIViewController {
     
     var episodes = GOTEpisode.allEpisodes
     
+    
     @IBOutlet weak var introTableView: UITableView!
     
     override func viewDidLoad() {
@@ -33,12 +34,16 @@ extension InitialViewController: UITableViewDataSource {
         
         let episodeCell = episodes[indexPath.row]
         
-        cell.textLabel?.text = episodeCell.name
+        cell.episodeNameLabel.text = episodeCell.name
         
+        let secondLabel = ("S" + ":" + "\(episodeCell.season)" + " " + "E" + ":" + "\(episodeCell.number)")
         
-        return cell
+        cell.episodeOrderLabel.text = secondLabel
+        
+    return cell
+        }
     }
-}
+
 
 extension InitialViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
