@@ -9,8 +9,8 @@
 import UIKit
 
 class InitialViewController: UIViewController {
-    
-    var episodes = GOTEpisode.allEpisodes
+    //original:  private var episodes = GOTEpisode.allEpisodes
+    private var episodes = GOTEpisode.allEpisodes()
     
     
     @IBOutlet weak var introTableView: UITableView!
@@ -22,6 +22,13 @@ class InitialViewController: UIViewController {
  
   }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? EpisodeViewController,
+            let cellSelected = introTableView.indexPathForSelectedRow else { return }
+        let episodeSelected = episodes[cellSelected.row]
+        destination.gotEpisodes = episodeSelected
+    }
+    
 }
 
 extension InitialViewController: UITableViewDataSource {
@@ -39,6 +46,9 @@ extension InitialViewController: UITableViewDataSource {
         let secondLabel = ("S" + ":" + "\(episodeCell.season)" + " " + "E" + ":" + "\(episodeCell.number)")
         
         cell.episodeOrderLabel.text = secondLabel
+        
+//        cell.imageView?.image = episodeCell.image - not working
+        
         
     return cell
         }
