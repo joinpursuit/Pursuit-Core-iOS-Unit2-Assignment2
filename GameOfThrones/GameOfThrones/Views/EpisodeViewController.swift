@@ -20,14 +20,16 @@ class EpisodeViewController: UIViewController {
     
     @IBOutlet weak var airdateLabel: UILabel!
     
-
+    @IBOutlet weak var episodeNumber: UILabel!
+    
     @IBOutlet weak var episodeTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        nameLabel.text = gotEpisodes.name
         seasonLabel.text = "Season: " + gotEpisodes.season.description
-        nameLabel.text = "Episode: " + gotEpisodes.name
+        episodeNumber.text = "Episode: " + gotEpisodes.number.description
         runtimeLabel.text = "Runtime: " + gotEpisodes.runtime.description
         airdateLabel.text = "Airdate: " + gotEpisodes.airdate
         
