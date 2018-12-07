@@ -28,17 +28,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="110.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzM-CD-cY9">
-                                                    <rect key="frame" x="15" y="-43" width="141" height="121"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="episodeNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRZ-Yv-0dx">
-                                                    <rect key="frame" x="172" y="0.0" width="148" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="episodeOrderLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVb-sd-Ldr">
                                                     <rect key="frame" x="172" y="22" width="147" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -46,11 +35,21 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="episodeNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRZ-Yv-0dx">
+                                                    <rect key="frame" x="172" y="0.0" width="148" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzM-CD-cY9">
+                                                    <rect key="frame" x="15" y="0.0" width="141" height="110"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="episodeImage" destination="lzM-CD-cY9" id="ByK-V3-ceg"/>
                                             <outlet property="episodeNameLabel" destination="eRZ-Yv-0dx" id="Px2-cZ-9Ce"/>
                                             <outlet property="episodeOrderLabel" destination="AVb-sd-Ldr" id="poe-Mz-06V"/>
                                             <segue destination="XGL-W2-EsH" kind="show" id="Ry4-tk-fI6"/>
@@ -75,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941" y="-845"/>
+            <point key="canvasLocation" x="939.375" y="-845.07042253521126"/>
         </scene>
         <!--Episode View Controller-->
         <scene sceneID="FLl-UX-tGe">
@@ -139,6 +138,7 @@
                     </view>
                     <connections>
                         <outlet property="airdateLabel" destination="Xn3-AF-ffe" id="gNP-1F-VGJ"/>
+                        <outlet property="detailEpisodeImage" destination="l8J-Dp-ITI" id="yrI-Nr-GeN"/>
                         <outlet property="episodeNumber" destination="g4p-Fj-wnf" id="3Zu-dL-fae"/>
                         <outlet property="episodeTextView" destination="eeT-Dd-J7W" id="pl8-59-wqD"/>
                         <outlet property="nameLabel" destination="3ZQ-AN-a2a" id="rVe-Dv-1aw"/>
@@ -166,7 +166,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKt-4e-MKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71" y="-500"/>
+            <point key="canvasLocation" x="203" y="-852"/>
         </scene>
     </scenes>
 </document>

@@ -24,6 +24,8 @@ class EpisodeViewController: UIViewController {
     
     @IBOutlet weak var episodeTextView: UITextView!
     
+    @IBOutlet weak var detailEpisodeImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +37,7 @@ class EpisodeViewController: UIViewController {
         
         episodeTextView.text = gotEpisodes.summary
         
+        detailEpisodeImage.image = UIImage.init(named: gotEpisodes.originalImageID)
     }
     
 

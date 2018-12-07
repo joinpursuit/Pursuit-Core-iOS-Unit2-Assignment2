@@ -15,6 +15,7 @@ class InitialViewController: UIViewController {
     
     @IBOutlet weak var introTableView: UITableView!
     
+    
     override func viewDidLoad() {
     super.viewDidLoad()
     introTableView.dataSource = self
@@ -46,10 +47,7 @@ extension InitialViewController: UITableViewDataSource {
         let secondLabel = ("S" + ":" + "\(episodeCell.season)" + " " + "E" + ":" + "\(episodeCell.number)")
         
         cell.episodeOrderLabel.text = secondLabel
-        
-//        cell.imageView?.image = episodeCell.image - not working
-        
-        
+            
     return cell
         }
     }
