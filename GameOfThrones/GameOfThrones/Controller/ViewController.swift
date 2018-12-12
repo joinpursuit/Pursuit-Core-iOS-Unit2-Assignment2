@@ -28,6 +28,7 @@ class EpisodeListViewController: UIViewController {
 
 extension EpisodeListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //sectioning the sections into categories
         let episode = seasonsArray[indexPath.section][indexPath.row]
         if episode.season % 2 != 0 {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "leftCell", for: indexPath) as? EpisodeCell else { return UITableViewCell() }
@@ -51,7 +52,7 @@ extension EpisodeListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return seasonsArray.count
     }
-    
+    //function for making sections
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Season \((seasonsArray[section].first?.season)!)"
     }
