@@ -65,7 +65,6 @@
                                             <outlet property="episodePicture" destination="2AU-oT-pjQ" id="OKu-6Z-TMg"/>
                                             <outlet property="subLabel" destination="mqV-r5-0cR" id="fPL-s2-6lS"/>
                                             <outlet property="titleLabel" destination="0vq-Ih-6kf" id="yxd-r4-ggo"/>
-                                            <segue destination="EL7-US-j2D" kind="show" id="cDB-mw-pkx"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="subtitleCell" textLabel="GuR-D0-h0y" detailTextLabel="evp-gL-kXK" imageView="MAZ-YF-UiU" rowHeight="168" style="IBUITableViewCellStyleSubtitle" id="6bM-7T-RTa" customClass="CustomTableViewCell" customModule="GameOfThrones" customModuleProvider="target">
@@ -95,9 +94,6 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="EL7-US-j2D" kind="show" id="XFf-Hc-zfh"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -120,149 +116,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
-        </scene>
-        <!--detailedViewController-->
-        <scene sceneID="cYQ-DW-bCb">
-            <objects>
-                <viewController storyboardIdentifier="detailedViewController" id="EL7-US-j2D" userLabel="detailedViewController" customClass="DetailedViewController" customModule="GameOfThrones" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3Mk-Zt-xGR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JmV-hF-kn3">
-                                <rect key="frame" x="0.0" y="88" width="414" height="268.66666666666669"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="71Q-YI-vIr">
-                                <rect key="frame" x="0.0" y="593.33333333333337" width="414" height="268.66666666666663"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="AdW-pp-C0D">
-                                <rect key="frame" x="8" y="356.66666666666669" width="406" height="236.66666666666669"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxG-sr-Db0" userLabel="episodeNameLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="406" height="26.666666666666668"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOf-CC-Qih" userLabel="seasonLabel">
-                                        <rect key="frame" x="0.0" y="52.666666666666636" width="406" height="26.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rrf-23-4YD" userLabel="episodeNumberLabel">
-                                        <rect key="frame" x="0.0" y="105" width="406" height="26.666666666666657"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8j8-48-4Vb" userLabel="runtimeLabel">
-                                        <rect key="frame" x="0.0" y="157.66666666666669" width="406" height="26.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMP-kB-goc" userLabel="airDateLabel">
-                                        <rect key="frame" x="0.0" y="209.99999999999994" width="406" height="26.666666666666657"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="JmV-hF-kn3" firstAttribute="width" secondItem="3Mk-Zt-xGR" secondAttribute="width" multiplier="0.5" id="0z0-ox-Yi2"/>
-                            <constraint firstItem="AdW-pp-C0D" firstAttribute="top" secondItem="JmV-hF-kn3" secondAttribute="bottom" id="1J2-8K-MBq"/>
-                            <constraint firstItem="JmV-hF-kn3" firstAttribute="top" secondItem="nJX-VN-o7n" secondAttribute="top" id="1dL-W4-ekC"/>
-                            <constraint firstItem="71Q-YI-vIr" firstAttribute="leading" secondItem="nJX-VN-o7n" secondAttribute="leading" id="1uR-bv-k8D"/>
-                            <constraint firstItem="71Q-YI-vIr" firstAttribute="top" secondItem="AdW-pp-C0D" secondAttribute="bottom" id="Bbg-bC-rcM"/>
-                            <constraint firstItem="71Q-YI-vIr" firstAttribute="top" secondItem="JmV-hF-kn3" secondAttribute="bottom" id="Dhc-4X-ZOJ"/>
-                            <constraint firstItem="JmV-hF-kn3" firstAttribute="height" secondItem="3Mk-Zt-xGR" secondAttribute="height" multiplier="0.3" id="Hih-Vv-4zO"/>
-                            <constraint firstItem="nJX-VN-o7n" firstAttribute="trailing" secondItem="JmV-hF-kn3" secondAttribute="trailing" id="J8d-N1-cFz"/>
-                            <constraint firstItem="nJX-VN-o7n" firstAttribute="trailing" secondItem="71Q-YI-vIr" secondAttribute="trailing" id="KDb-xo-oRi"/>
-                            <constraint firstItem="JmV-hF-kn3" firstAttribute="leading" secondItem="nJX-VN-o7n" secondAttribute="leading" id="PHd-SU-Ve0"/>
-                            <constraint firstItem="71Q-YI-vIr" firstAttribute="leading" secondItem="nJX-VN-o7n" secondAttribute="leading" id="QG0-aU-45d"/>
-                            <constraint firstItem="nJX-VN-o7n" firstAttribute="trailing" secondItem="AdW-pp-C0D" secondAttribute="trailing" id="Rh7-u6-gih"/>
-                            <constraint firstItem="JmV-hF-kn3" firstAttribute="leading" secondItem="nJX-VN-o7n" secondAttribute="leading" id="al3-3y-YtS"/>
-                            <constraint firstItem="nJX-VN-o7n" firstAttribute="bottom" secondItem="71Q-YI-vIr" secondAttribute="bottom" id="b6Q-8Z-JOS"/>
-                            <constraint firstItem="71Q-YI-vIr" firstAttribute="height" secondItem="3Mk-Zt-xGR" secondAttribute="height" multiplier="0.3" id="cbN-nv-wAP"/>
-                            <constraint firstItem="71Q-YI-vIr" firstAttribute="trailing" secondItem="nJX-VN-o7n" secondAttribute="trailing" id="dlL-uR-DSy"/>
-                            <constraint firstItem="nJX-VN-o7n" firstAttribute="trailing" secondItem="AdW-pp-C0D" secondAttribute="trailing" id="faJ-vz-O5q"/>
-                            <constraint firstItem="71Q-YI-vIr" firstAttribute="top" secondItem="AdW-pp-C0D" secondAttribute="bottom" id="j7S-ea-JmO"/>
-                            <constraint firstItem="71Q-YI-vIr" firstAttribute="bottom" secondItem="nJX-VN-o7n" secondAttribute="bottom" id="lAL-r6-TbM"/>
-                            <constraint firstItem="AdW-pp-C0D" firstAttribute="leading" secondItem="JmV-hF-kn3" secondAttribute="trailing" id="rRE-aM-Fo8"/>
-                            <constraint firstItem="JmV-hF-kn3" firstAttribute="top" secondItem="nJX-VN-o7n" secondAttribute="top" id="tnh-bc-7Ta"/>
-                            <constraint firstItem="AdW-pp-C0D" firstAttribute="leading" secondItem="nJX-VN-o7n" secondAttribute="leading" constant="8" id="vHq-X9-V7I"/>
-                            <constraint firstItem="71Q-YI-vIr" firstAttribute="height" secondItem="3Mk-Zt-xGR" secondAttribute="height" multiplier="0.3" id="wwH-zK-WzS"/>
-                            <constraint firstItem="nJX-VN-o7n" firstAttribute="top" secondItem="AdW-pp-C0D" secondAttribute="top" id="xo2-oU-Sgn"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="nJX-VN-o7n"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="faJ-vz-O5q"/>
-                                <exclude reference="xo2-oU-Sgn"/>
-                                <exclude reference="0z0-ox-Yi2"/>
-                                <exclude reference="1dL-W4-ekC"/>
-                                <exclude reference="al3-3y-YtS"/>
-                                <exclude reference="rRE-aM-Fo8"/>
-                                <exclude reference="Dhc-4X-ZOJ"/>
-                                <exclude reference="QG0-aU-45d"/>
-                                <exclude reference="dlL-uR-DSy"/>
-                                <exclude reference="j7S-ea-JmO"/>
-                                <exclude reference="lAL-r6-TbM"/>
-                                <exclude reference="wwH-zK-WzS"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=regular">
-                            <mask key="constraints">
-                                <exclude reference="J8d-N1-cFz"/>
-                                <exclude reference="KDb-xo-oRi"/>
-                                <exclude reference="Rh7-u6-gih"/>
-                                <exclude reference="b6Q-8Z-JOS"/>
-                                <include reference="faJ-vz-O5q"/>
-                                <include reference="xo2-oU-Sgn"/>
-                                <include reference="0z0-ox-Yi2"/>
-                                <include reference="1dL-W4-ekC"/>
-                                <exclude reference="Hih-Vv-4zO"/>
-                                <exclude reference="PHd-SU-Ve0"/>
-                                <include reference="al3-3y-YtS"/>
-                                <exclude reference="tnh-bc-7Ta"/>
-                                <exclude reference="1J2-8K-MBq"/>
-                                <include reference="rRE-aM-Fo8"/>
-                                <exclude reference="vHq-X9-V7I"/>
-                                <exclude reference="1uR-bv-k8D"/>
-                                <exclude reference="Bbg-bC-rcM"/>
-                                <include reference="Dhc-4X-ZOJ"/>
-                                <include reference="QG0-aU-45d"/>
-                                <exclude reference="cbN-nv-wAP"/>
-                                <include reference="dlL-uR-DSy"/>
-                                <include reference="j7S-ea-JmO"/>
-                                <include reference="lAL-r6-TbM"/>
-                                <include reference="wwH-zK-WzS"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" id="FGt-Ly-U1K"/>
-                    <connections>
-                        <outlet property="airDateLabel" destination="GMP-kB-goc" id="z3T-Gq-0Qc"/>
-                        <outlet property="descriptionTextView" destination="71Q-YI-vIr" id="Zva-Xv-reN"/>
-                        <outlet property="episodeName" destination="gxG-sr-Db0" id="anK-U5-ltx"/>
-                        <outlet property="episodeNumberLabel" destination="Rrf-23-4YD" id="x1g-ZV-yV6"/>
-                        <outlet property="imageDisplay" destination="JmV-hF-kn3" id="rZH-X5-kaV"/>
-                        <outlet property="runtimeLabel" destination="8j8-48-4Vb" id="3w7-ta-K3f"/>
-                        <outlet property="seasonLabel" destination="dOf-CC-Qih" id="aR1-Hf-6Dy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KH8-1E-1oe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1876.3392857142856" y="128.98550724637681"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jZp-4T-AvN">
@@ -287,7 +140,4 @@
         <image name="142273" width="1920" height="1080"/>
         <image name="157920" width="1920" height="1080"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="cDB-mw-pkx"/>
-    </inferredMetricsTieBreakers>
 </document>

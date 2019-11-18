@@ -19,6 +19,7 @@ class TableViewController: UIViewController {
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 100
     tableView.dataSource = self
+    tableView.delegate = self
   }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -30,6 +31,16 @@ class TableViewController: UIViewController {
 
 
 }
+
+extension TableViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let displayStoryboard = UIStoryboard(name: "SecondaryStoryboardFile" , bundle: nil)
+        let displayVC = displayStoryboard.instantiateViewController(withIdentifier: "detailedViewController") as! DetailedViewController
+        displayVC.currentEpisode = gotMatrix[indexPath.section][indexPath.row]
+        navigationController?.pushViewController(displayVC, animated: true)
+    }
+}
+
 
 extension TableViewController: UITableViewDataSource{
     

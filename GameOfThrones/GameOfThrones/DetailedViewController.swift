@@ -31,5 +31,22 @@ class DetailedViewController: UIViewController {
         descriptionTextView.text = currentEpisode.summary
         
     }
+    
+    static func createNewDVC(_ sender: GOTEpisode) -> DetailedViewController{
+        let storyboard = UIStoryboard.init(name: "SecondaryStoryboardFile", bundle: nil)
+        guard let detailedVC = storyboard.instantiateViewController(withIdentifier: "detailedViewController") as? DetailedViewController else{
+            fatalError("Could not declare new instance of detailed View Controller")
+        }
+        
+        detailedVC.imageDisplay.image = UIImage(named: "\(sender.originalImageID)")
+        detailedVC.episodeName.text = sender.name
+        detailedVC.seasonLabel.text = "Season: \(sender.season)"
+        detailedVC.episodeNumberLabel.text = "Episode: \(sender.number)"
+        detailedVC.runtimeLabel.text = "Runtime: \(sender.runtime)"
+        detailedVC.airDateLabel.text = "Airdate: \(sender.airdate)"
+        detailedVC.descriptionTextView.text = sender.summary
+        
+        return detailedVC
+    }
 
 }
