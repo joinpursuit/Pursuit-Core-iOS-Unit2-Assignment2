@@ -16,6 +16,7 @@
 		C417AAB62382B26700D7303D /* SecondaryStoryboardFile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C417AAB52382B26700D7303D /* SecondaryStoryboardFile.storyboard */; };
 		C458892E237F4A26002162FF /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C458892D237F4A26002162FF /* CustomTableViewCell.swift */; };
 		C46B99502381FBD600228EA2 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B994F2381FBD600228EA2 /* DetailedViewController.swift */; };
+		C4FB63C82383421C00671C1E /* SecondCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB63C72383421C00671C1E /* SecondCustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C417AAB52382B26700D7303D /* SecondaryStoryboardFile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondaryStoryboardFile.storyboard; sourceTree = "<group>"; };
 		C458892D237F4A26002162FF /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C46B994F2381FBD600228EA2 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		C4FB63C72383421C00671C1E /* SecondCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +66,9 @@
 			children = (
 				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
 				57D0D22B219F70EA00B5753A /* TableViewController.swift */,
-				C46B994F2381FBD600228EA2 /* DetailedViewController.swift */,
 				C458892D237F4A26002162FF /* CustomTableViewCell.swift */,
+				C46B994F2381FBD600228EA2 /* DetailedViewController.swift */,
+				C4FB63C72383421C00671C1E /* SecondCustomTableViewCell.swift */,
 				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
 				57D0D230219F70EA00B5753A /* Assets.xcassets */,
 				57D0D22D219F70EA00B5753A /* Main.storyboard */,
@@ -152,6 +155,7 @@
 				57D0D22C219F70EA00B5753A /* TableViewController.swift in Sources */,
 				C46B99502381FBD600228EA2 /* DetailedViewController.swift in Sources */,
 				C458892E237F4A26002162FF /* CustomTableViewCell.swift in Sources */,
+				C4FB63C82383421C00671C1E /* SecondCustomTableViewCell.swift in Sources */,
 				57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

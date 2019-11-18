@@ -67,13 +67,10 @@ extension TableViewController: UITableViewDataSource{
             
         } else {
 
-        let xCell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell", for: indexPath)
-
-        xCell.textLabel?.text = gotMatrix[indexPath.section][indexPath.row].name
-        xCell.detailTextLabel?.text = "S:\(gotMatrix[indexPath.section][indexPath.row].season) E:\(gotMatrix[indexPath.section][indexPath.row].number)"
-            xCell.imageView?.image = UIImage(named:gotMatrix[indexPath.section][indexPath.row].mediumImageID)
-        return xCell
-
+            if let xCell = tableView.dequeueReusableCell(withIdentifier: "secondCustomCell", for: indexPath) as? SecondCustomTableViewCell {
+                xCell.setUp(gotMatrix[indexPath.section][indexPath.row])
+                return xCell
+            }
         }
         
         return UITableViewCell()
