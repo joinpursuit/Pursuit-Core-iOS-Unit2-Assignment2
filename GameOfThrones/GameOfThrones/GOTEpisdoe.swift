@@ -98,4 +98,28 @@ class GOTEpisode {
         GOTEpisode(airdate: "2017-08-20", id: 1221414, name: "Beyond the Wall", number: 6, season: 7, runtime: 60, summary: "Jon's mission continues north of the wall, but the odds against his ragged band of misfits may be greater than he imagined.", mediumImageID: "312651", originalImageID: "312651"),
         GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
     ]
+    
+    // MARK: Helper Methods
+    static func gotMatrixBySeason(_ arr: [GOTEpisode]) -> [[GOTEpisode]] {
+        let sortedEpisodes = arr.sorted { $0.season < $1.season}
+        let numberOfSections = Set<Int>(sortedEpisodes.map {$0.season})
+        var gotMatrix = Array(repeating: [GOTEpisode](), count: numberOfSections.count)
+        
+        var currentIndex = 0
+        var currentSection = sortedEpisodes.first?.season
+        
+        for element in sortedEpisodes{
+            if element.season == currentSection{
+                gotMatrix[currentIndex].append(element)
+            } else {
+                currentIndex += 1
+                currentSection = element.season
+                gotMatrix[currentIndex].append(element)
+            }
+        }
+        
+        return gotMatrix
+    }
+    
+    
 }
