@@ -64,10 +64,10 @@
 			children = (
 				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
 				57D0D22B219F70EA00B5753A /* ViewController.swift */,
+				C61484AA23847B9000F11FDD /* EpisodeDetailViewController.swift */,
 				57D0D22D219F70EA00B5753A /* Main.storyboard */,
 				C61484AC23847FEA00F11FDD /* OddNumberSeasonCell.swift */,
 				C61484AE23849A7500F11FDD /* EvenNumberCell.swift */,
-				C61484AA23847B9000F11FDD /* EpisodeDetailViewController.swift */,
 				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
 				57D0D230219F70EA00B5753A /* Assets.xcassets */,
 				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
