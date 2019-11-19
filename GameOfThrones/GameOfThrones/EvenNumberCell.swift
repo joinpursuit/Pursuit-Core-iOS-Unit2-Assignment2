@@ -1,5 +1,5 @@
 //
-//  EpisodeCell.swift
+//  EvenNumberCell.swift
 //  GameOfThrones
 //
 //  Created by casandra grullon on 11/19/19.
@@ -8,16 +8,15 @@
 
 import UIKit
 
-class EpisodeCell: UITableViewCell {
-
+class EvenNumberCell: UITableViewCell {
+    
     @IBOutlet weak var episodeImageView: UIImageView!
-    @IBOutlet weak var episodeTitleLabel: UILabel!
+    @IBOutlet weak var episodeNameLabel: UILabel!
     @IBOutlet weak var episodeNumberLabel: UILabel!
     
-    func configureCell(for episode: GOTEpisode ) {
+    func configureEvenCells(for episode: GOTEpisode){
         episodeImageView.image = UIImage(named: episode.mediumImageID)
-        episodeTitleLabel.text = episode.name
-        episodeNumberLabel.text = episode.number.description
+        episodeNameLabel.text = episode.name
+        episodeNumberLabel.text = "S:" + episode.season.description + " " + "E:" + episode.number.description
     }
-
 }

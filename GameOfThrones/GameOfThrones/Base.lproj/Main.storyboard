@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="episodeCell" rowHeight="168" id="eCb-wv-olu" customClass="EpisodeCell" customModule="GameOfThrones" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="episodeCell" rowHeight="168" id="eCb-wv-olu" customClass="OddNumberSeasonCell" customModule="GameOfThrones" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="168"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eCb-wv-olu" id="HFq-cy-iO1">
@@ -40,28 +40,77 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="episode number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MH-a8-rw5">
-                                                    <rect key="frame" x="156" y="48" width="230" height="21"/>
+                                                    <rect key="frame" x="156" y="128" width="230" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7MH-a8-rw5" firstAttribute="top" secondItem="Rc7-6x-qkG" secondAttribute="bottom" constant="8" id="6hn-J1-uB6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="7MH-a8-rw5" secondAttribute="bottom" constant="8" id="5d8-xf-YXO"/>
                                                 <constraint firstItem="j0T-mM-V05" firstAttribute="top" secondItem="HFq-cy-iO1" secondAttribute="topMargin" constant="8" id="7gV-OB-loq"/>
                                                 <constraint firstItem="Rc7-6x-qkG" firstAttribute="top" secondItem="HFq-cy-iO1" secondAttribute="topMargin" constant="8" id="DVa-Fn-2fe"/>
                                                 <constraint firstItem="j0T-mM-V05" firstAttribute="leading" secondItem="HFq-cy-iO1" secondAttribute="leadingMargin" constant="8" id="EOT-dc-ZTf"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Rc7-6x-qkG" secondAttribute="trailing" constant="8" id="JcM-fy-IsY"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="7MH-a8-rw5" secondAttribute="trailing" constant="8" id="RDf-gN-K53"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7MH-a8-rw5" secondAttribute="trailing" constant="8" id="K5V-Tj-Xwf"/>
                                                 <constraint firstItem="Rc7-6x-qkG" firstAttribute="leading" secondItem="j0T-mM-V05" secondAttribute="trailing" constant="8" id="TbJ-DF-Itp"/>
-                                                <constraint firstItem="7MH-a8-rw5" firstAttribute="leading" secondItem="j0T-mM-V05" secondAttribute="trailing" constant="8" id="bkR-CC-BRE"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="j0T-mM-V05" secondAttribute="bottom" constant="8" id="h7a-gX-HyF"/>
+                                                <constraint firstItem="7MH-a8-rw5" firstAttribute="leading" secondItem="j0T-mM-V05" secondAttribute="trailing" constant="8" id="yAJ-yF-6Ug"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="episodeImageView" destination="j0T-mM-V05" id="h8Z-6U-xId"/>
                                             <outlet property="episodeNumberLabel" destination="7MH-a8-rw5" id="icy-Wj-bem"/>
                                             <outlet property="episodeTitleLabel" destination="Rc7-6x-qkG" id="B5N-y8-oZd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="evenEpisodeCell" rowHeight="168" id="TXz-0w-6oe" customClass="OddNumberSeasonCell" customModule="GameOfThrones" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="196" width="414" height="168"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TXz-0w-6oe" id="5RO-8I-oWs" customClass="EvenNumberCell" customModule="GameOfThrones" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="168"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bjr-6N-DOI">
+                                                    <rect key="frame" x="282" y="19" width="120" height="130"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="3US-FD-ZLc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Epsiode Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yF-ZO-uH2">
+                                                    <rect key="frame" x="28" y="19" width="246" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="episode number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeJ-Wd-qkc">
+                                                    <rect key="frame" x="28" y="128" width="246" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bjr-6N-DOI" firstAttribute="top" secondItem="5RO-8I-oWs" secondAttribute="topMargin" constant="8" id="8Pq-Dw-UCG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Bjr-6N-DOI" secondAttribute="bottom" constant="8" id="Drk-pV-Sw0"/>
+                                                <constraint firstItem="yeJ-Wd-qkc" firstAttribute="leading" secondItem="5RO-8I-oWs" secondAttribute="leadingMargin" constant="8" id="Iu7-5M-DiX"/>
+                                                <constraint firstItem="8yF-ZO-uH2" firstAttribute="leading" secondItem="5RO-8I-oWs" secondAttribute="leadingMargin" constant="8" id="NeG-zK-ln3"/>
+                                                <constraint firstItem="Bjr-6N-DOI" firstAttribute="trailing" secondItem="5RO-8I-oWs" secondAttribute="trailingMargin" constant="8" id="XjV-YF-LhH"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yeJ-Wd-qkc" secondAttribute="bottom" constant="8" id="YKn-Xz-O7R"/>
+                                                <constraint firstItem="Bjr-6N-DOI" firstAttribute="leading" secondItem="yeJ-Wd-qkc" secondAttribute="trailing" constant="8" id="fkE-IO-YLv"/>
+                                                <constraint firstItem="Bjr-6N-DOI" firstAttribute="leading" secondItem="8yF-ZO-uH2" secondAttribute="trailing" constant="8" id="g9Y-tc-OTX"/>
+                                                <constraint firstItem="8yF-ZO-uH2" firstAttribute="top" secondItem="5RO-8I-oWs" secondAttribute="topMargin" constant="8" id="oDK-iv-KDy"/>
+                                            </constraints>
+                                            <connections>
+                                                <outlet property="episodeImageView" destination="Bjr-6N-DOI" id="iCn-7h-LmK"/>
+                                                <outlet property="episodeNameLabel" destination="8yF-ZO-uH2" id="0EQ-X5-z13"/>
+                                                <outlet property="episodeNumberLabel" destination="yeJ-Wd-qkc" id="TCe-W3-SIC"/>
+                                            </connections>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="episodeImageView" destination="Bjr-6N-DOI" id="T8c-oR-ikr"/>
+                                            <outlet property="episodeNumberLabel" destination="yeJ-Wd-qkc" id="hIn-tb-noN"/>
+                                            <outlet property="episodeTitleLabel" destination="8yF-ZO-uH2" id="5IU-Xt-Xjb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

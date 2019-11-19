@@ -112,6 +112,7 @@ class GOTEpisode {
                 sections[currentIndex].append(episode)
             } else {
                 currentIndex += 1
+                currentSeason = episode.season
                 sections[currentIndex].append(episode)
             }
         }

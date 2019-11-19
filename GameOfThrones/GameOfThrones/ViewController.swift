@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     loadData()
     tableView.dataSource = self
+    tableView.delegate = self
   }
 
     func loadData(){
@@ -36,12 +37,27 @@ extension ViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? OddNumberSeasonCell else {
+            fatalError("cell didn't work")
+        }
         
         let episode = gotEpisodes[indexPath.section][indexPath.row]
         
-        
+        cell.configureCell(for: episode)
+
         
         return cell
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return gotEpisodes.count
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return gotEpisodes[section].first?.season.description
+    }
+}
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+        
     }
 }
