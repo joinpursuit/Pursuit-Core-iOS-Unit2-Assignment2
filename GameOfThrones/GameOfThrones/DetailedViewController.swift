@@ -10,7 +10,10 @@ import UIKit
 
 class DetailedViewController: UIViewController {
 
+    // MARK: ViewController Properties
     weak var currentEpisode: GOTEpisode!
+    
+    // MARK: ViewController Outlets
     @IBOutlet weak var imageDisplay: UIImageView!
     @IBOutlet weak var episodeName: UILabel!
     @IBOutlet weak var seasonLabel: UILabel!
@@ -19,7 +22,7 @@ class DetailedViewController: UIViewController {
     @IBOutlet weak var airDateLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     
-    
+    // MARK: Life cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         imageDisplay.image = UIImage(named: "\(currentEpisode.originalImageID)")
@@ -29,24 +32,6 @@ class DetailedViewController: UIViewController {
         runtimeLabel.text = "Runtime: \(currentEpisode.runtime)"
         airDateLabel.text = "Airdate: \(currentEpisode.airdate)"
         descriptionTextView.text = currentEpisode.summary
-        
-    }
-    
-    static func createNewDVC(_ sender: GOTEpisode) -> DetailedViewController{
-        let storyboard = UIStoryboard.init(name: "SecondaryStoryboardFile", bundle: nil)
-        guard let detailedVC = storyboard.instantiateViewController(withIdentifier: "detailedViewController") as? DetailedViewController else{
-            fatalError("Could not declare new instance of detailed View Controller")
-        }
-        
-        detailedVC.imageDisplay.image = UIImage(named: "\(sender.originalImageID)")
-        detailedVC.episodeName.text = sender.name
-        detailedVC.seasonLabel.text = "Season: \(sender.season)"
-        detailedVC.episodeNumberLabel.text = "Episode: \(sender.number)"
-        detailedVC.runtimeLabel.text = "Runtime: \(sender.runtime)"
-        detailedVC.airDateLabel.text = "Airdate: \(sender.airdate)"
-        detailedVC.descriptionTextView.text = sender.summary
-        
-        return detailedVC
     }
 
 }

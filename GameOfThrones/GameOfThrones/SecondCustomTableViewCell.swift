@@ -10,10 +10,12 @@ import UIKit
 
 class SecondCustomTableViewCell: UITableViewCell {
     
+    // MARK: TableViewCell Outlets
     @IBOutlet weak var leftImage: UIImageView!
     @IBOutlet weak var titleDisplayLabel: UILabel!
     @IBOutlet weak var episodeDisplayLabel: UILabel!
     
+    // MARK: Helper Methods
     func setUp(_ episode: GOTEpisode){
         titleDisplayLabel.text = episode.name
         episodeDisplayLabel.text = "S:\(episode.season) E:\(episode.number)"

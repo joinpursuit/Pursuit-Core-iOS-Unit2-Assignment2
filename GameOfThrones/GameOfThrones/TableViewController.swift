@@ -10,8 +10,11 @@ import UIKit
 
 class TableViewController: UIViewController {
     
+    // MARK: ViewController Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    // MARK: ViewController Properties
     var gotMatrix : [[GOTEpisode]] = [] {
         didSet{
             tableView.reloadData()
@@ -37,31 +40,26 @@ class TableViewController: UIViewController {
         default:
             return []
         }
-       // return GOTEpisode.allEpisodes.filter{ $0.name.contains(userQuery) }
+        
     }
     
-    
+    // MARK: UIViewController Life cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
         loadMatrix()
-        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destinationReference = segue.destination as? DetailedViewController, let indexPath = tableView.indexPathForSelectedRow else{
-            return
-        }
-        destinationReference.currentEpisode = gotMatrix[indexPath.section][indexPath.row]
-    }
-    
+    // MARK: Helper Methods
     private func loadMatrix(){
         gotMatrix = GOTEpisode.gotMatrixBySeason(GOTEpisode.allEpisodes)
     }
     
 }
+
+// MARK: UITableViewDelegate Methods
 
 extension TableViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -76,13 +74,14 @@ extension TableViewController: UITableViewDelegate{
     }
 }
 
+// MARK: UITableViewDataSource Methods
 
 extension TableViewController: UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return gotMatrix.count
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Season \(gotMatrix[section][0].season)"
     }
@@ -94,37 +93,31 @@ extension TableViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section % 2 == 0{
-            
             if let xCell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? CustomTableViewCell{
-                
                 xCell.setUp(gotMatrix[indexPath.section][indexPath.row])
-                
                 return xCell
             }
-            
         } else {
-            
             if let xCell = tableView.dequeueReusableCell(withIdentifier: "secondCustomCell", for: indexPath) as? SecondCustomTableViewCell {
                 xCell.setUp(gotMatrix[indexPath.section][indexPath.row])
                 return xCell
             }
-
         }
-        
         return UITableViewCell()
-        
     }
 }
+
+// MARK: UISearchBar Delegate Methods
 
 extension TableViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
         userQuery = searchText
     }
     
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        guard let text = searchBar.text else {
-//            fatalError("Found a value of nil while unwrapping searchBar text.")
-//        }
-//        userQuery = text
-//    }
+    //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    //        guard let text = searchBar.text else {
+    //            fatalError("Found a value of nil while unwrapping searchBar text.")
+    //        }
+    //        userQuery = text
+    //    }
 }

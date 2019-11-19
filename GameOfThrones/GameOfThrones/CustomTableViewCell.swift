@@ -10,21 +10,12 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
+    // MARK: ViewController Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     @IBOutlet weak var episodePicture: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+    // MARK: Helper Methods
     func setUp(_ episode: GOTEpisode){
         titleLabel.text = episode.name
         subLabel.text = "S:\(episode.season) E:\(episode.number)"
