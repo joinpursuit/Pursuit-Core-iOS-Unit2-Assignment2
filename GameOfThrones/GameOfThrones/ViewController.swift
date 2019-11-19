@@ -10,11 +10,38 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var gotEpisodes = [[GOTEpisode]]() {
+        didSet{
+            tableView.reloadData()
+        }
+    }
+    
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    loadData()
+    tableView.dataSource = self
   }
 
-
+    func loadData(){
+        gotEpisodes = GOTEpisode.getSections()
+    }
 }
 
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return gotEpisodes[section].count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath)
+        
+        let episode = gotEpisodes[indexPath.section][indexPath.row]
+        
+        
+        
+        return cell
+    }
+}
