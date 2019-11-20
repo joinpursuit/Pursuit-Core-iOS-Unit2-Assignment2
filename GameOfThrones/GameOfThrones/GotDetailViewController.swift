@@ -19,6 +19,8 @@ class GotDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updatedUI()
+        gotContentDetailLabel.isEditable = false
+        gotDescLabel.isEditable = false
         // Do any additional setup after loading the view.
     }
     
