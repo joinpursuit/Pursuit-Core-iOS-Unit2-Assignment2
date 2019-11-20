@@ -13,6 +13,8 @@
 		57D0D231219F70EA00B5753A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D230219F70EA00B5753A /* Assets.xcassets */; };
 		57D0D234219F70EA00B5753A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */; };
 		57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */; };
+		F11782592384971800DD23E8 /* GotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11782582384971800DD23E8 /* GotCell.swift */; };
+		F117825B2384AA8D00DD23E8 /* GotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117825A2384AA8D00DD23E8 /* GotDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		57D0D233219F70EA00B5753A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57D0D235219F70EA00B5753A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		F11782582384971800DD23E8 /* GotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotCell.swift; sourceTree = "<group>"; };
+		F117825A2384AA8D00DD23E8 /* GotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,13 @@
 			children = (
 				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
 				57D0D22B219F70EA00B5753A /* ViewController.swift */,
+				F117825A2384AA8D00DD23E8 /* GotDetailViewController.swift */,
 				57D0D22D219F70EA00B5753A /* Main.storyboard */,
 				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
 				57D0D230219F70EA00B5753A /* Assets.xcassets */,
 				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
 				57D0D235219F70EA00B5753A /* Info.plist */,
+				F11782582384971800DD23E8 /* GotCell.swift */,
 			);
 			path = GameOfThrones;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F117825B2384AA8D00DD23E8 /* GotDetailViewController.swift in Sources */,
 				57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */,
 				57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */,
+				F11782592384971800DD23E8 /* GotCell.swift in Sources */,
 				57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
