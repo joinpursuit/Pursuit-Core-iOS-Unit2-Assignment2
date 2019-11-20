@@ -13,6 +13,9 @@
 		57D0D231219F70EA00B5753A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D230219F70EA00B5753A /* Assets.xcassets */; };
 		57D0D234219F70EA00B5753A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */; };
 		57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */; };
+		C61484AB23847B9000F11FDD /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61484AA23847B9000F11FDD /* EpisodeDetailViewController.swift */; };
+		C61484AD23847FEA00F11FDD /* OddNumberSeasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61484AC23847FEA00F11FDD /* OddNumberSeasonCell.swift */; };
+		C61484AF23849A7500F11FDD /* EvenNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61484AE23849A7500F11FDD /* EvenNumberCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		57D0D233219F70EA00B5753A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57D0D235219F70EA00B5753A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		C61484AA23847B9000F11FDD /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		C61484AC23847FEA00F11FDD /* OddNumberSeasonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddNumberSeasonCell.swift; sourceTree = "<group>"; };
+		C61484AE23849A7500F11FDD /* EvenNumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenNumberCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,10 @@
 			children = (
 				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
 				57D0D22B219F70EA00B5753A /* ViewController.swift */,
+				C61484AA23847B9000F11FDD /* EpisodeDetailViewController.swift */,
 				57D0D22D219F70EA00B5753A /* Main.storyboard */,
+				C61484AC23847FEA00F11FDD /* OddNumberSeasonCell.swift */,
+				C61484AE23849A7500F11FDD /* EvenNumberCell.swift */,
 				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
 				57D0D230219F70EA00B5753A /* Assets.xcassets */,
 				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
@@ -138,7 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C61484AD23847FEA00F11FDD /* OddNumberSeasonCell.swift in Sources */,
 				57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */,
+				C61484AF23849A7500F11FDD /* EvenNumberCell.swift in Sources */,
+				C61484AB23847B9000F11FDD /* EpisodeDetailViewController.swift in Sources */,
 				57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */,
 				57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */,
 			);
