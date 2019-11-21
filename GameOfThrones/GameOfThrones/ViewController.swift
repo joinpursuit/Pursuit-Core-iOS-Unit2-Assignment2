@@ -31,6 +31,13 @@ class ViewController: UIViewController {
     
   }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailViewController = segue.destination as? GOTDetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError()
+        }
+        let episode = seasons[indexPath.section][indexPath.row]
+        detailViewController.episode = episode
+    }
 
 }
 extension ViewController: UITableViewDataSource {

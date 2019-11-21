@@ -13,6 +13,7 @@
 		57D0D231219F70EA00B5753A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D230219F70EA00B5753A /* Assets.xcassets */; };
 		57D0D234219F70EA00B5753A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */; };
 		57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */; };
+		8D451A8F23863B9F00750A91 /* GOTDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D451A8E23863B9F00750A91 /* GOTDetailViewController.swift */; };
 		8D5620C723849EB500A605E3 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5620C623849EB500A605E3 /* FirstTableViewCell.swift */; };
 		8D5620C923849EC600A605E3 /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5620C823849EC600A605E3 /* SecondTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		57D0D233219F70EA00B5753A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57D0D235219F70EA00B5753A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		8D451A8E23863B9F00750A91 /* GOTDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTDetailViewController.swift; sourceTree = "<group>"; };
 		8D5620C623849EB500A605E3 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		8D5620C823849EC600A605E3 /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +65,7 @@
 				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
 				57D0D22B219F70EA00B5753A /* ViewController.swift */,
 				57D0D22D219F70EA00B5753A /* Main.storyboard */,
+				8D451A8E23863B9F00750A91 /* GOTDetailViewController.swift */,
 				8D5620C623849EB500A605E3 /* FirstTableViewCell.swift */,
 				8D5620C823849EC600A605E3 /* SecondTableViewCell.swift */,
 				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
@@ -146,6 +149,7 @@
 			files = (
 				57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */,
 				8D5620C923849EC600A605E3 /* SecondTableViewCell.swift in Sources */,
+				8D451A8F23863B9F00750A91 /* GOTDetailViewController.swift in Sources */,
 				57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */,
 				8D5620C723849EB500A605E3 /* FirstTableViewCell.swift in Sources */,
 				57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */,
