@@ -30,7 +30,7 @@ class EpisodeViewController: UIViewController {
         guard let theEpisode = episode else {
             fatalError("Couldn't get an episode value, verify prepare(for segue: ")
         }
-        title = theEpisode.name
+        //title = theEpisode.name
         episodeImageView.image = UIImage(named: "\(theEpisode.originalImageID)")
         episodeNameLabel.text = theEpisode.name
         episodeSeasonLabel.text = "Season: \(theEpisode.season)"
