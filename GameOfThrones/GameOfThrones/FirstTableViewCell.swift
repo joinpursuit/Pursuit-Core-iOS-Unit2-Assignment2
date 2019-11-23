@@ -9,14 +9,14 @@
 import UIKit
 
 class FirstTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var episodeImageView: UIImageView!
     
     @IBOutlet weak var episodeNameLabel: UILabel!
     
     @IBOutlet weak var seasonEpisodeNumberLabel: UILabel!
     
-   
+    
     
     func configureFirstCell(for episode: GOTEpisode) {
         

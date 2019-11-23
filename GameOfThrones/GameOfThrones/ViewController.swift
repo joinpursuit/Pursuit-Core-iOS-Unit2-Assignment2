@@ -22,15 +22,15 @@ class ViewController: UIViewController {
     
     
     
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    seasons = GOTEpisode.getSeasonSections()
-    tableView.dataSource = self
-    tableView.delegate = self
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        seasons = GOTEpisode.getSeasonSections()
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        
+    }
     
-    
-  }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailViewController = segue.destination as? GOTDetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
             fatalError()
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         let episode = seasons[indexPath.section][indexPath.row]
         detailViewController.episode = episode
     }
-
+    
 }
 extension ViewController: UITableViewDataSource {
     
@@ -63,7 +63,7 @@ extension ViewController: UITableViewDataSource {
             return cell
         }
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return seasons.count
     }

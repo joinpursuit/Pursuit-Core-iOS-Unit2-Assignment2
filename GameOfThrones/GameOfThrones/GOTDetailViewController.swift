@@ -35,7 +35,7 @@ class GOTDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         updateUI()
     }
     
@@ -44,7 +44,7 @@ class GOTDetailViewController: UIViewController {
             fatalError()
         }
         navigationItem.title = gotEpisode.name
-
+        
         episodeImage.image = UIImage(named: gotEpisode.originalImageID)
         episodeNameLabel.text = gotEpisode.name
         episodeNumberLabel.text = "Episode \(gotEpisode.number)"
@@ -53,6 +53,6 @@ class GOTDetailViewController: UIViewController {
         descriptionTextView.text = gotEpisode.summary
         
     }
-
-   
+    
+    
 }

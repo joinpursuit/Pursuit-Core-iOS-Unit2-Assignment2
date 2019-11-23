@@ -9,7 +9,7 @@
 import UIKit
 
 class SecondTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var episodeImageView: UIImageView!
     
     @IBOutlet weak var episodeNameLabel: UILabel!

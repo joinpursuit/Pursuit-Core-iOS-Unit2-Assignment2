@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O7S-tq-Dsm">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
@@ -144,40 +144,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TA3-N7-7fZ">
-                                <rect key="frame" x="20" y="20" width="374" height="210.5"/>
+                                <rect key="frame" x="20" y="20" width="374" height="210.66666666666666"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of episode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCc-Kq-uFJ">
-                                <rect key="frame" x="20" y="250.5" width="374" height="21"/>
+                                <rect key="frame" x="20" y="250.66666666666663" width="374" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DV8-e0-QRA">
-                                <rect key="frame" x="20" y="301.5" width="374" height="18"/>
+                                <rect key="frame" x="20" y="301.66666666666669" width="374" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3E-vP-3pQ">
-                                <rect key="frame" x="20" y="339.5" width="374" height="18"/>
+                                <rect key="frame" x="20" y="339.66666666666669" width="374" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Runtime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNE-B0-aOJ">
-                                <rect key="frame" x="20" y="377.5" width="374" height="18"/>
+                                <rect key="frame" x="20" y="377.66666666666669" width="374" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Airdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsp-8T-xX0">
-                                <rect key="frame" x="20" y="415.5" width="374" height="18"/>
+                                <rect key="frame" x="20" y="415.66666666666669" width="374" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jWJ-zQ-3nj">
-                                <rect key="frame" x="50" y="525" width="314" height="163"/>
+                                <rect key="frame" x="20" y="441.66666666666674" width="374" height="358.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -193,7 +193,7 @@
                             <constraint firstItem="Kc4-tN-AgJ" firstAttribute="trailing" secondItem="QNE-B0-aOJ" secondAttribute="trailing" constant="20" id="4P7-uo-DtR"/>
                             <constraint firstItem="DV8-e0-QRA" firstAttribute="top" secondItem="DCc-Kq-uFJ" secondAttribute="bottom" constant="30" id="86P-V4-0Bt"/>
                             <constraint firstItem="QNE-B0-aOJ" firstAttribute="top" secondItem="j3E-vP-3pQ" secondAttribute="bottom" constant="20" id="A1k-FG-3Hc"/>
-                            <constraint firstItem="jWJ-zQ-3nj" firstAttribute="top" secondItem="Wsp-8T-xX0" secondAttribute="bottom" constant="91.5" id="AlS-qw-eob"/>
+                            <constraint firstItem="jWJ-zQ-3nj" firstAttribute="top" secondItem="Wsp-8T-xX0" secondAttribute="bottom" constant="8" id="AlS-qw-eob"/>
                             <constraint firstItem="TA3-N7-7fZ" firstAttribute="height" secondItem="7eB-7Y-a4F" secondAttribute="height" multiplier="0.25" id="JWW-6T-sP4"/>
                             <constraint firstItem="Kc4-tN-AgJ" firstAttribute="trailing" secondItem="TA3-N7-7fZ" secondAttribute="trailing" constant="20" id="Xmc-TN-EFJ"/>
                             <constraint firstItem="DCc-Kq-uFJ" firstAttribute="top" secondItem="TA3-N7-7fZ" secondAttribute="bottom" constant="20" id="alP-GZ-uav"/>
@@ -204,12 +204,12 @@
                             <constraint firstItem="Kc4-tN-AgJ" firstAttribute="trailing" secondItem="Wsp-8T-xX0" secondAttribute="trailing" constant="20" id="gsN-Ej-xca"/>
                             <constraint firstItem="Kc4-tN-AgJ" firstAttribute="trailing" secondItem="j3E-vP-3pQ" secondAttribute="trailing" constant="20" id="kO4-Oq-jpN"/>
                             <constraint firstItem="DCc-Kq-uFJ" firstAttribute="leading" secondItem="Kc4-tN-AgJ" secondAttribute="leading" constant="20" id="mD6-0F-4PS"/>
-                            <constraint firstItem="jWJ-zQ-3nj" firstAttribute="leading" secondItem="Kc4-tN-AgJ" secondAttribute="leading" constant="50" id="nYk-6r-rMF"/>
+                            <constraint firstItem="jWJ-zQ-3nj" firstAttribute="leading" secondItem="Kc4-tN-AgJ" secondAttribute="leading" constant="20" id="nYk-6r-rMF"/>
                             <constraint firstItem="TA3-N7-7fZ" firstAttribute="leading" secondItem="Kc4-tN-AgJ" secondAttribute="leading" constant="20" id="pFx-W6-TZM"/>
                             <constraint firstItem="Kc4-tN-AgJ" firstAttribute="trailing" secondItem="DCc-Kq-uFJ" secondAttribute="trailing" constant="20" id="rt3-ps-Du1"/>
                             <constraint firstItem="Kc4-tN-AgJ" firstAttribute="trailing" secondItem="DV8-e0-QRA" secondAttribute="trailing" constant="20" id="yDR-c5-Qso"/>
-                            <constraint firstItem="Kc4-tN-AgJ" firstAttribute="trailing" secondItem="jWJ-zQ-3nj" secondAttribute="trailing" constant="50" id="yKT-EY-n9o"/>
-                            <constraint firstItem="Kc4-tN-AgJ" firstAttribute="bottom" secondItem="jWJ-zQ-3nj" secondAttribute="bottom" constant="120" id="yfy-ha-JVu"/>
+                            <constraint firstItem="Kc4-tN-AgJ" firstAttribute="trailing" secondItem="jWJ-zQ-3nj" secondAttribute="trailing" constant="20" id="yKT-EY-n9o"/>
+                            <constraint firstItem="Kc4-tN-AgJ" firstAttribute="bottom" secondItem="jWJ-zQ-3nj" secondAttribute="bottom" constant="8" id="yfy-ha-JVu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kc4-tN-AgJ"/>
                     </view>
