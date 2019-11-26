@@ -17,7 +17,7 @@ class MovieTableViewCell: UITableViewCell {
     func configureCell(for movie: GOTEpisode) {
            movieImage.image = UIImage(named: movie.mediumImageID.description)
            nameLabel.text = movie.name
-           subLabel.text = String(movie.season)
+           subLabel.text = "S: \(movie.season) E: \(movie.number)"
        }
 
 }
