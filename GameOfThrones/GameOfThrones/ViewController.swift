@@ -30,6 +30,15 @@ class ViewController: UIViewController {
         movieEpisodes = GOTEpisode.getSeasonSection() // seasonSection() that we will creat in GOTEpisode.file
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let secondViewComtroller = segue.destination as? EpisodeViewController,
+            let indexPath = tableView.indexPathForSelectedRow
+            else {
+            fatalError("cannot reach EpisodeViewController")
+        }
+        let episode = movieEpisodes[indexPath.section][indexPath.row]
+        secondViewComtroller.episode = episode
+    }
     
 }
 
