@@ -13,6 +13,10 @@
 		57D0D231219F70EA00B5753A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D230219F70EA00B5753A /* Assets.xcassets */; };
 		57D0D234219F70EA00B5753A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */; };
 		57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */; };
+		A57953DE219F887F001D6FF8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57953DD219F887F001D6FF8 /* DetailViewController.swift */; };
+		A5DB223321A1DE92002AC7C4 /* OddSeasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DB223221A1DE92002AC7C4 /* OddSeasonCell.swift */; };
+		A5DB223721A1EFD4002AC7C4 /* EvenSeasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DB223621A1EFD4002AC7C4 /* EvenSeasonCell.swift */; };
+		A5DB224021A2F81F002AC7C4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5DB223F21A2F81F002AC7C4 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		57D0D233219F70EA00B5753A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57D0D235219F70EA00B5753A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		A57953DD219F887F001D6FF8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A5DB223221A1DE92002AC7C4 /* OddSeasonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddSeasonCell.swift; sourceTree = "<group>"; };
+		A5DB223621A1EFD4002AC7C4 /* EvenSeasonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenSeasonCell.swift; sourceTree = "<group>"; };
+		A5DB223F21A2F81F002AC7C4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,7 @@
 		57D0D21D219F70EA00B5753A = {
 			isa = PBXGroup;
 			children = (
+				57D0D235219F70EA00B5753A /* Info.plist */,
 				57D0D228219F70EA00B5753A /* GameOfThrones */,
 				57D0D227219F70EA00B5753A /* Products */,
 			);
@@ -56,15 +65,42 @@
 		57D0D228219F70EA00B5753A /* GameOfThrones */ = {
 			isa = PBXGroup;
 			children = (
-				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
-				57D0D22B219F70EA00B5753A /* ViewController.swift */,
-				57D0D22D219F70EA00B5753A /* Main.storyboard */,
-				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
-				57D0D230219F70EA00B5753A /* Assets.xcassets */,
+				A5DB223B21A2F74D002AC7C4 /* Model */,
+				A5DB223921A2F717002AC7C4 /* View */,
+				A5DB223A21A2F727002AC7C4 /* Controller */,
+				A5DB223F21A2F81F002AC7C4 /* Default-568h@2x.png */,
 				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
-				57D0D235219F70EA00B5753A /* Info.plist */,
+				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
+				57D0D230219F70EA00B5753A /* Assets.xcassets */,
 			);
 			path = GameOfThrones;
+			sourceTree = "<group>";
+		};
+		A5DB223921A2F717002AC7C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D22D219F70EA00B5753A /* Main.storyboard */,
+				A5DB223621A1EFD4002AC7C4 /* EvenSeasonCell.swift */,
+				A5DB223221A1DE92002AC7C4 /* OddSeasonCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5DB223A21A2F727002AC7C4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D22B219F70EA00B5753A /* ViewController.swift */,
+				A57953DD219F887F001D6FF8 /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5DB223B21A2F74D002AC7C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D0D234219F70EA00B5753A /* LaunchScreen.storyboard in Resources */,
+				A5DB224021A2F81F002AC7C4 /* Default-568h@2x.png in Resources */,
 				57D0D231219F70EA00B5753A /* Assets.xcassets in Resources */,
 				57D0D22F219F70EA00B5753A /* Main.storyboard in Resources */,
 			);
@@ -138,9 +175,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DB223321A1DE92002AC7C4 /* OddSeasonCell.swift in Sources */,
 				57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */,
 				57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */,
 				57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */,
+				A5DB223721A1EFD4002AC7C4 /* EvenSeasonCell.swift in Sources */,
+				A57953DE219F887F001D6FF8 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,14 +326,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: jw8zhu@gmail.com (99H7L4C4C4)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GameOfThrones/Info.plist;
+				DEVELOPMENT_TEAM = WGF5N989LK;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.GameOfThrones;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.Pursuit.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=*]" = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -303,14 +349,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: jw8zhu@gmail.com (99H7L4C4C4)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GameOfThrones/Info.plist;
+				DEVELOPMENT_TEAM = WGF5N989LK;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.GameOfThrones;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.Pursuit.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
